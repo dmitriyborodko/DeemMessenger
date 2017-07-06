@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="ChatRoom" representedClassName="ChatRoom" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="messages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Messege" inverseName="chatRoom" inverseEntity="Messege" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="chatRooms" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Messege" representedClassName="Messege" syncable="YES" codeGenerationType="class">
+        <attribute name="body" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="dateSent" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="chatRoom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChatRoom" inverseName="messages" inverseEntity="ChatRoom" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chatRooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChatRoom" inverseName="users" inverseEntity="ChatRoom" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Messege" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="User" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="ChatRoom" positionX="-36" positionY="36" width="128" height="90"/>
+    </elements>
+</model>
