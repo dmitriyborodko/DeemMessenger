@@ -1,13 +1,13 @@
 //
-//  DMTextMessageView.h
+//  DMDialogHolder.h
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 07/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface DMTextMessageView : UIView
+@interface DMDialogHolder : NSObject
 
 @end

@@ -1,5 +1,5 @@
 //
-//  DMTextMessageView.h
+//  DMChatVC.h
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 07/07/2017.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DMTextMessageView : UIView
+@interface DMChatVC : UIViewController
 
 @end

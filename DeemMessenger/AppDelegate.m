@@ -84,6 +84,14 @@
 
 #pragma mark - Core Data Saving support
 
++ (AppDelegate *)sharedInstance {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
++ (NSManagedObjectContext *)managedObjectContext {
+    return [AppDelegate sharedInstance].persistentContainer.viewContext;
+}
+
 - (void)saveContext {
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;

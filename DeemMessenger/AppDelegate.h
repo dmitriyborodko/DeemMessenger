@@ -13,10 +13,12 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (AppDelegate *)sharedInstance;
++ (NSManagedObjectContext *)managedObjectContext;
+
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
 
 
 @end
-

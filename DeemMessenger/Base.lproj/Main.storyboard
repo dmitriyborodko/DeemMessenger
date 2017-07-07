@@ -22,8 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drs-ab-krX">
-                                <rect key="frame" x="116" y="318" width="142" height="30"/>
-                                <state key="normal" title="Chat with Stupid Bot"/>
+                                <rect key="frame" x="94" y="318" width="187" height="30"/>
+                                <state key="normal" title="Chat with Pretty Stupid Bot"/>
                                 <connections>
                                     <segue destination="P9i-IR-ifh" kind="show" id="Qeg-A8-f0j"/>
                                 </connections>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="364" y="126"/>
         </scene>
-        <!--View Controller-->
+        <!--ChatVC-->
         <scene sceneID="Vfa-wg-RJH">
             <objects>
-                <viewController id="P9i-IR-ifh" sceneMemberID="viewController">
+                <viewController id="P9i-IR-ifh" customClass="DMChatVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eWZ-51-AVS"/>
                         <viewControllerLayoutGuide type="bottom" id="B0P-XV-1Nl"/>
@@ -73,6 +73,9 @@
                             <constraint firstAttribute="trailing" secondItem="eUm-Dd-pg7" secondAttribute="trailing" id="v3d-5h-zHz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chatCollection" destination="eUm-Dd-pg7" id="yyS-91-zGW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnX-gk-nhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

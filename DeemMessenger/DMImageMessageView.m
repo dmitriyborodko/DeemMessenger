@@ -1,14 +1,14 @@
 //
-//  DMTextMessageView.m
+//  DMImageMessageView.m
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 07/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "DMTextMessageView.h"
+#import "DMImageMessageView.h"
 
-@implementation DMTextMessageView
+@implementation DMImageMessageView
 
 /*
 // Only override drawRect: if you perform custom drawing.
