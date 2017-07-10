@@ -7,6 +7,7 @@
 //
 
 #import "DMChatVC.h"
+#import "DMDialogHolder.h"
 
 @interface DMChatVC ()
 
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 

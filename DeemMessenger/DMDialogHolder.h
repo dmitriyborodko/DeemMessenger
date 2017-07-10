@@ -7,7 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DMUser+CoreDataClass.h"
+#import "DMMessage+CoreDataClass.h"
+
+#import <UIKit/UIKit.h>
+
+@protocol DMDialogHolderDelegate <NSObject>
+
+@required
+
+@end
 
 @interface DMDialogHolder : NSObject
+
+@property (weak, nonatomic) DMUser *companion;
+@property (weak, nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+
+@property (nonatomic, weak) id <DMDialogHolderDelegate> delegate;
+
+- (instancetype)initWithCompanion:(DMUser *)companion;
 
 @end

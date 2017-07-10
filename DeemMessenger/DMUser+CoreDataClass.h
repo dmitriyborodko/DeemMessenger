@@ -2,14 +2,14 @@
 //  DMUser+CoreDataClass.h
 //  DeemMessenger
 //
-//  Created by ALS_Deem on 07/07/2017.
+//  Created by ALS_Deem on 10/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class DMMessege;
+@class DMMessage;
 
 NS_ASSUME_NONNULL_BEGIN
 

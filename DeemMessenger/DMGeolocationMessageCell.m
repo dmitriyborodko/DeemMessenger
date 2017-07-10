@@ -1,14 +1,14 @@
 //
-//  DMMessageCell.m
+//  DMGeolocationMessageCell.m
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 10/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "DMMessageCell.h"
+#import "DMGeolocationMessageCell.h"
 
-@implementation DMMessageCell
+@implementation DMGeolocationMessageCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -16,8 +16,7 @@
 }
 
 - (void)setupWith:(DMMessage *)message {
-    
+    [super setupWith:message];
 }
-
 
 @end

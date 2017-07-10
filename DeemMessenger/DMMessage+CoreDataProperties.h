@@ -1,19 +1,19 @@
 //
-//  DMMessege+CoreDataProperties.h
+//  DMMessage+CoreDataProperties.h
 //  DeemMessenger
 //
-//  Created by ALS_Deem on 07/07/2017.
+//  Created by ALS_Deem on 10/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "DMMessege+CoreDataClass.h"
+#import "DMMessage+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DMMessege (CoreDataProperties)
+@interface DMMessage (CoreDataProperties)
 
-+ (NSFetchRequest<DMMessege *> *)fetchRequest;
++ (NSFetchRequest<DMMessage *> *)fetchRequest;
 
 @property (nullable, nonatomic, retain) NSData *body;
 @property (nullable, nonatomic, copy) NSDate *dateSent;

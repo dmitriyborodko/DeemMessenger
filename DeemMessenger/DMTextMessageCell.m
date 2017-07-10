@@ -1,14 +1,14 @@
 //
-//  DMMessageCell.m
+//  DMTextMessageCell.m
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 10/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "DMMessageCell.h"
+#import "DMTextMessageCell.h"
 
-@implementation DMMessageCell
+@implementation DMTextMessageCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -16,8 +16,9 @@
 }
 
 - (void)setupWith:(DMMessage *)message {
+    [super setupWith:message];
+    
     
 }
-
 
 @end
