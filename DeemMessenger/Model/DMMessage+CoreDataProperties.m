@@ -11,7 +11,7 @@
 @implementation DMMessage (CoreDataProperties)
 
 + (NSFetchRequest<DMMessage *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"DMMessage"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"DMMessage"];
 }
 
 @dynamic body;

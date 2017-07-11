@@ -8,10 +8,11 @@
 
 #import "DMChatVC.h"
 #import "DMDialogHolder.h"
+#import "DMChatCollectionView.h"
 
 @interface DMChatVC ()
 
-@property (weak, nonatomic) IBOutlet UICollectionView *chatCollection;
+@property (weak, nonatomic) IBOutlet DMChatCollectionView *chatCollection;
 
 @end
 
@@ -19,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.chatCollection.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
+    self.title = self.companion.name;
     
     // Do any additional setup after loading the view.
 }

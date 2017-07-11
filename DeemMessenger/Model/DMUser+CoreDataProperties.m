@@ -11,7 +11,7 @@
 @implementation DMUser (CoreDataProperties)
 
 + (NSFetchRequest<DMUser *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"DMUser"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"DMUser"];
 }
 
 @dynamic isActive;

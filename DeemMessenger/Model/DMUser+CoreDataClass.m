@@ -30,7 +30,7 @@
             user = [AppDelegate sharedInstance].user;
         } else {
             NSFetchRequest *fetchRequest = [DMUser fetchRequest];
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isActive == %@", YES];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isActive == %d", YES];
             
             NSError *error = nil;
             NSArray *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
@@ -39,7 +39,7 @@
                 user = [fetchedObjects firstObject];
             }
             else {
-                NSDictionary *userJSON = [DMUtility dictionaryFromJSONFileNamed:@"ActiveUser.json"];
+                NSDictionary *userJSON = [DMUtility dictionaryFromJSONFileNamed:@"ActiveUser"];
                 user = [DMUser inserOrUpdateWithDictionary:userJSON];
             }
             
@@ -66,30 +66,35 @@
     __block DMUser *user = nil;
     
     [dictionary ifValidValueForKey:@"id" perform:^(id object) {
-        int16_t userId = [object integerValue];
+        int userId = [object intValue];
         
         NSFetchRequest *fetchRequest = [DMUser fetchRequest];
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %@", userId];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", userId];
         
         NSError *error = nil;
         NSArray *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+        
         if (fetchedObjects.count) {
             DMUser *foundUser = [fetchedObjects firstObject];
-            
-            [dictionary ifValidValueForKey:@"name" perform:^(NSString *object) {
-                foundUser.name = object;
-            }];
-            
-            [dictionary ifValidValueForKey:@"isActive" perform:^(NSString *object) {
-                foundUser.isActive = [object boolValue];
-            }];
-            
             user = foundUser;
         }
+        
         else {
             NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMUser class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
             user = [[DMUser alloc] initWithEntity:entity insertIntoManagedObjectContext:[AppDelegate managedObjectContext]];
+            user.userId = [object intValue];
         }
+        
+        [dictionary ifValidValueForKey:@"name" perform:^(NSString *object) {
+            user.name = object;
+        }];
+        
+        [dictionary ifValidValueForKey:@"isActive" perform:^(NSString *object) {
+            user.isActive = [object boolValue];
+        }];
+        
+        [[AppDelegate managedObjectContext] save:&error];
+        
     }];
     
     return user;

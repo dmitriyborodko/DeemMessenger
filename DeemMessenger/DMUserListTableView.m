@@ -9,7 +9,6 @@
 #import "DMUserListTableView.h"
 #import "AppDelegate.h"
 #import "DMDecepticon.h"
-#import "DMUser+CoreDataClass.h"
 
 @interface DMUserListTableView () <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
@@ -19,35 +18,43 @@
 
 @implementation DMUserListTableView
 
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-#warning get user list
-    
+    self.delegate = self;
+    self.dataSource = self;
+    self.fetchedResultsController.delegate = self;
 }
 
 - (NSFetchedResultsController<DMUser *> *)fetchedResultsController {
     
-    if (self.fetchedResultsController) {
-        return self.fetchedResultsController;
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
     }
     
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMUser class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
-    fetchRequest.entity = entity;
+    NSFetchRequest *fetchRequest = [DMUser fetchRequest];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isActive == %@", NO];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isActive == %d", NO];
     fetchRequest.predicate = predicate;
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateSent"
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                                    ascending:YES];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
     NSFetchedResultsController<DMUser *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController = fetchedResultsController;
-    self.fetchedResultsController.delegate = self;
     
-    return fetchedResultsController;
+    NSError *error = nil;
+    if (![fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    _fetchedResultsController = fetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,6 +70,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     
 }
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DMUser+CoreDataClass.h"
 
 @interface DMUserListTableView : UITableView
+
+@property (weak, nonatomic, readonly) NSFetchedResultsController<DMUser *> *fetchedResultsController;
 
 @end

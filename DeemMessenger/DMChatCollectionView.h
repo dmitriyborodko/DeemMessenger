@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DMDialogHolder.h"
+
 @interface DMChatCollectionView : UICollectionView
+
+@property (strong, nonatomic) DMDialogHolder *dialogHolder;
 
 @end

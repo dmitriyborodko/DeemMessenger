@@ -8,13 +8,10 @@
 
 #import "DMChatCollectionView.h"
 
-#import "DMDialogHolder.h"
 #import "DMMessageCell.h"
 #import "DMMessageCellFactory.h"
 
 @interface DMChatCollectionView () <UICollectionViewDataSource, DMDialogHolderDelegate, UICollectionViewDelegateFlowLayout>
-
-@property (weak, nonatomic) DMDialogHolder *dialogHolder;
 
 @end
 
@@ -24,6 +21,8 @@
     [super awakeFromNib];
     
     self.dialogHolder.delegate = self;
+    self.delegate = self;
+    self.dataSource = self;
     
     for (Class viewClass in [DMMessageCellFactory cellClasses]) {
         [self registerNib:[UINib nibWithNibName:NSStringFromClass(viewClass) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(viewClass)];

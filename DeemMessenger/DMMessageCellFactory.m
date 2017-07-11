@@ -53,23 +53,23 @@
 + (CGSize)estimatedContentSizeOfMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth {
     switch (message.type) {
         case kMessageTypeText: {
-            cellClass = [DMTextMessageCell class];
+            return CGSizeMake(screenWidth, 50);
             break;
         }
             
         case kMessageTypeImage: {
-            cellClass = [DMImageMessageCell class];
+            return CGSizeMake(screenWidth, 50);
             break;
         }
             
         case kMessageTypeGeolocation: {
-            cellClass = [DMGeolocationMessageCell class];
+            return CGSizeMake(screenWidth, 50);
             break;
         }
             
         default: {
             return CGSizeMake(screenWidth, 50);
-            NSLog(@"Unknown message cell type!");
+//            NSLog(@"Unknown message cell type!");
             break;
         }
     }

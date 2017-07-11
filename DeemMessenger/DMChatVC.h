@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DMUser+CoreDataClass.h"
 
 @interface DMChatVC : UIViewController
 
-
+@property (weak, nonatomic) DMUser *companion;
 
 @end

@@ -11,7 +11,22 @@
 @implementation DMUtility
 
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName {
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
+
+    NSString *jsonString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    if (!jsonString) {
+        NSLog(@"File couldn't be read!");
+        return nil;
+    }
+    NSError *jsonError;
+    NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&jsonError];
     
+    if (jsonError) {
+        NSLog(@"Couldn't read json form Decepticon file");
+        return nil;
+    } else {
+        return [NSDictionary dictionaryWithDictionary:jsonDict];
+    }
 }
 
 @end

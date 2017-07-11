@@ -1,31 +1,35 @@
 //
-//  UserListVC.m
+//  DMUserListVC.m
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 11/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "UserListVC.h"
+#import "DMUserListVC.h"
 #import "DMNetworking.h"
+#import "DMUserListTableView.h"
 
-@interface UserListVC ()
+#import "DMChatVC.h"
+
+@interface DMUserListVC ()
+
+@property (weak, nonatomic) IBOutlet DMUserListTableView *tableView;
 
 @end
 
-@implementation UserListVC
+@implementation DMUserListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        //Background Thread
-        
         
         [[DMNetworking sharedInstance] getUsersWithCompletionHandler:^{
-            <#code#>
+            NSLog(@"Users loaded");
         }];
+        
     });
 }
 
@@ -38,9 +42,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    NSLog(@"%@", sender);
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *selectedIndex = [self.tableView indexPathForCell:(UITableViewCell *)sender];
+    DMUser *selectedUser = self.tableView.fetchedResultsController.fetchedObjects[selectedIndex.row];
+    
+    ((DMChatVC *)segue.destinationViewController).companion = selectedUser;
 }
 
 @end

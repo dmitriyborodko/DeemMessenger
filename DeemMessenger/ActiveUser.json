@@ -1,7 +1,5 @@
-[
- {
- "id"           : "0",
- "isActive"     : "1",
- "name"         : "Tester"
- }
- ]
+{
+    "id"           : "0",
+    "isActive"     : "1",
+    "name"         : "Tester"
+}

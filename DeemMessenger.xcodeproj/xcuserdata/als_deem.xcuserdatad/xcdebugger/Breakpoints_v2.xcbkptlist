@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DeemMessenger/DMDialogHolder.m"
-            timestampString = "521376181.936692"
+            timestampString = "521461907.04273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "@implementation DMDialogHolder"
             landmarkType = "3">
          </BreakpointContent>

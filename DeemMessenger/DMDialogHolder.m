@@ -17,6 +17,8 @@
 
 @implementation DMDialogHolder
 
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 - (instancetype)initWithCompanion:(DMUser *)companion {
     if (self = [super init]) {
         self.companion = companion;
@@ -26,28 +28,35 @@
 
 #pragma mark - Fetched Results Controller
 
-- (NSFetchedResultsController *)fetchedResultsController {
+- (NSFetchedResultsController<DMMessage *> *)fetchedResultsController {
     
-    if (self.fetchedResultsController) {
-        return self.fetchedResultsController;
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMMessage class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
     fetchRequest.entity = entity;
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sender == %@", self.companion];
-    fetchRequest.predicate = predicate;
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sender == %@", self.companion];
+//    fetchRequest.predicate = predicate;
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateSent"
                                                                    ascending:YES];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
-    NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
-    self.fetchedResultsController = fetchedResultsController;
-    self.fetchedResultsController.delegate = self;
+    NSFetchedResultsController<DMMessage *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     
-    return fetchedResultsController;
+    NSError *error = nil;
+    if (![fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    _fetchedResultsController = fetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
 }
 
 #pragma  mark - Dialog Holder Delegate

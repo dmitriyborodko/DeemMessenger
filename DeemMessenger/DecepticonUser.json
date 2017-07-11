@@ -1,7 +1,5 @@
- [
-  {
-  "id"           : "1",
-  "isActive"     : "0",
-  "name"         : "Decepticon"
-  }
-  ]
+{
+    "id"           : "1",
+    "isActive"     : "0",
+    "name"         : "Decepticon"
+}

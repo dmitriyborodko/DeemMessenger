@@ -1,5 +1,5 @@
 //
-//  UserListVC.h
+//  DMUserListVC.h
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 11/07/2017.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DMUser+CoreDataClass.h"
 
-@interface UserListVC : UIViewController
+@interface DMUserListVC : UIViewController
 
 @end
