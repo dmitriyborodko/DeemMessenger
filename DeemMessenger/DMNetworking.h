@@ -10,4 +10,8 @@
 
 @interface DMNetworking : NSObject
 
++ (DMNetworking *)sharedInstance;
+
+- (void)getUsersWithCompletionHandler:(void (^)(void))blockName;
+
 @end

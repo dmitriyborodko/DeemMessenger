@@ -103,4 +103,10 @@
     }
 }
 
+#pragma mark - Login
+
+- (void)setActiveUser:(DMUser *)user {
+    [DMUser fetchRequest];
+}
+
 @end

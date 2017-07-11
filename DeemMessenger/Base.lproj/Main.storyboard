@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User ListVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UserListVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,25 +21,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drs-ab-krX">
-                                <rect key="frame" x="94" y="318" width="187" height="30"/>
-                                <state key="normal" title="Chat with Pretty Stupid Bot"/>
-                                <connections>
-                                    <segue destination="P9i-IR-ifh" kind="show" id="Qeg-A8-f0j"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JgF-nw-waR" customClass="DMUserListTableView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" textLabel="CMG-he-IKT" style="IBUITableViewCellStyleDefault" id="fg2-OF-6Q4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fg2-OF-6Q4" id="h2S-oD-Ynz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CMG-he-IKT">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="P9i-IR-ifh" kind="show" identifier="ChatSegue" id="Oeg-Zz-2CM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="drs-ab-krX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8D5-mI-xKw"/>
-                            <constraint firstItem="drs-ab-krX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n89-yE-QcX"/>
+                            <constraint firstAttribute="trailing" secondItem="JgF-nw-waR" secondAttribute="trailing" id="OiI-O1-xkd"/>
+                            <constraint firstItem="JgF-nw-waR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fLB-pm-kVT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JgF-nw-waR" secondAttribute="bottom" id="l3d-hx-4OU"/>
+                            <constraint firstItem="JgF-nw-waR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y1b-hK-d77"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Hy-jw-D8v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="126"/>
+            <point key="canvasLocation" x="364" y="125.4872563718141"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="Vfa-wg-RJH">

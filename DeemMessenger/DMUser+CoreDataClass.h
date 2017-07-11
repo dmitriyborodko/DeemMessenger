@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DMUser : NSManagedObject
 
++ (DMUser *)active;
++ (DMUser *)inserOrUpdateWithDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

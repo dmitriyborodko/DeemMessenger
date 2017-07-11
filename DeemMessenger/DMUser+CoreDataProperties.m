@@ -2,7 +2,7 @@
 //  DMUser+CoreDataProperties.m
 //  DeemMessenger
 //
-//  Created by ALS_Deem on 10/07/2017.
+//  Created by ALS_Deem on 11/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"DMUser"];
 }
 
-@dynamic isActiveUser;
+@dynamic isActive;
 @dynamic name;
 @dynamic userId;
 @dynamic messages;

@@ -8,7 +8,7 @@
         <relationship name="sender" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DMUser" inverseName="messages" inverseEntity="DMUser" syncable="YES"/>
     </entity>
     <entity name="DMUser" representedClassName="DMUser" syncable="YES" codeGenerationType="class">
-        <attribute name="isActiveUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DMMessage" inverseName="sender" inverseEntity="DMMessage" syncable="YES"/>

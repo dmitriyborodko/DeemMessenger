@@ -2,7 +2,7 @@
 //  DMUser+CoreDataProperties.h
 //  DeemMessenger
 //
-//  Created by ALS_Deem on 10/07/2017.
+//  Created by ALS_Deem on 11/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<DMUser *> *)fetchRequest;
 
-@property (nonatomic) BOOL isActiveUser;
+@property (nonatomic) BOOL isActive;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) int64_t userId;
 @property (nullable, nonatomic, retain) NSSet<DMMessage *> *messages;
