@@ -27,4 +27,8 @@
 
 - (instancetype)initWithCompanion:(DMUser *)companion;
 
+- (void)sendTextMessage:(NSString *)text;
+- (void)sendImage:(UIImage *)image;
+- (void)sendGeolocation;
+
 @end

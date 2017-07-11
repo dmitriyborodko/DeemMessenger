@@ -8,9 +8,15 @@
 
 #import "DMNetworking.h"
 
-#import "DMDecepticon.h"
+@interface DMNetworking ()
+
+@property (strong, nonatomic) dispatch_queue_t serialQueue;
+
+@end
 
 @implementation DMNetworking
+
+@synthesize serialQueue = _serialQueue;
 
 + (DMNetworking *)sharedInstance {
     static DMNetworking *sharedInstance = nil;
@@ -24,9 +30,37 @@
     return sharedInstance;
 }
 
+- (dispatch_queue_t)serialQueue {
+    
+    if (!_serialQueue) {
+        _serialQueue  = dispatch_queue_create("com.networking.queue", DISPATCH_QUEUE_SERIAL);
+    }
+    return _serialQueue;
+}
+
 - (void)getUsersWithCompletionHandler:(void (^)(void))blockName {
-    [DMDecepticon insertDecepticonToCoreDataIfNeeded];
-//    blockName
+    dispatch_async(self.serialQueue, ^{
+        [DMDecepticon insertDecepticonToCoreDataIfNeeded];
+        blockName();
+    });
+}
+
+- (void)sendMessage:(NSDictionary *)messageDictionary completionHandler:(void (^)(BOOL success))completionHandler {
+    dispatch_async(self.serialQueue, ^{
+        [DMDecepticon handleEarthMessage:messageDictionary];
+    });
+}
+
+- (void)getDecepticonMessage:(NSDictionary *)dictionary {
+    
+    DMMessage *message = [DMMessage createWithType:[[dictionary objectForKey:@"type"] intValue]
+                                              body:[dictionary objectForKey:@"body"]
+                                          dateSent:[NSDate date]
+                                         messageId:[[dictionary objectForKey:@"messageId"] intValue]
+                                          senderId:[DMDecepticon user].userId];
+    
+    NSLog(@"Got from space: %@", message);
+    
 }
 
 @end

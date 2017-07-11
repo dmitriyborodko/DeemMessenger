@@ -7,12 +7,17 @@
 //
 
 #import "DMChatVC.h"
+
 #import "DMDialogHolder.h"
-#import "DMChatCollectionView.h"
 
-@interface DMChatVC ()
+#import "DMMessageCell.h"
+#import "DMMessageCellFactory.h"
 
-@property (weak, nonatomic) IBOutlet DMChatCollectionView *chatCollection;
+@interface DMChatVC () <UICollectionViewDelegateFlowLayout>
+
+@property (weak, nonatomic) IBOutlet UITextField *textInput;
+
+@property (strong, nonatomic) DMDialogHolder *dialogHolder;
 
 @end
 
@@ -21,15 +26,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.chatCollection.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
+    self.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
     self.title = self.companion.name;
     
-    // Do any additional setup after loading the view.
+    for (Class viewClass in [DMMessageCellFactory cellClasses]) {
+        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(viewClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(viewClass)];
+    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table View Data Source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dialogHolder.fetchedResultsController.fetchedObjects.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DMMessage *message = self.dialogHolder.fetchedResultsController.fetchedObjects[indexPath.row];
+    DMMessageCell *cell = [DMMessageCellFactory dequeueCellWithMessage:message forTableView:tableView];
+    
+    [cell setupWith:message];
+    
+    return cell;
+}
+
+#pragma mark - Controls
+
+- (IBAction)optionsPressed:(id)sender {
+    
+}
+
+- (IBAction)sendPressed:(id)sender {
+    [self.dialogHolder sendTextMessage:self.textInput.text];
 }
 
 /*

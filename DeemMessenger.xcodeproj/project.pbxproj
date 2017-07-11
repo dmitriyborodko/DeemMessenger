@@ -34,7 +34,6 @@
 		FFDD7FB41F0CDD0800184A7B /* DeemMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FB31F0CDD0800184A7B /* DeemMessengerTests.m */; };
 		FFDD7FBF1F0CDD0800184A7B /* DeemMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FBE1F0CDD0800184A7B /* DeemMessengerUITests.m */; };
 		FFDD7FDC1F0F598E00184A7B /* DMChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FDB1F0F598E00184A7B /* DMChatVC.m */; };
-		FFDD7FE01F0F5A1300184A7B /* DMChatCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FDF1F0F5A1300184A7B /* DMChatCollectionView.m */; };
 		FFDD7FFF1F0F61B000184A7B /* DMDialogHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */; };
 		FFDD801A1F0F6B7D00184A7B /* DecepticonUser.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */; };
 		FFDD801D1F0F6C2D00184A7B /* DMDecepticon.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD801C1F0F6C2D00184A7B /* DMDecepticon.m */; };
@@ -114,8 +113,6 @@
 		FFDD7FD11F0E01B400184A7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FFDD7FDA1F0F598E00184A7B /* DMChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMChatVC.h; sourceTree = "<group>"; };
 		FFDD7FDB1F0F598E00184A7B /* DMChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMChatVC.m; sourceTree = "<group>"; };
-		FFDD7FDE1F0F5A1300184A7B /* DMChatCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMChatCollectionView.h; sourceTree = "<group>"; };
-		FFDD7FDF1F0F5A1300184A7B /* DMChatCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMChatCollectionView.m; sourceTree = "<group>"; };
 		FFDD7FFD1F0F61B000184A7B /* DMDialogHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDialogHolder.h; sourceTree = "<group>"; };
 		FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDialogHolder.m; sourceTree = "<group>"; };
 		FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DecepticonUser.json; sourceTree = "<group>"; };
@@ -316,8 +313,6 @@
 		FFDD7FDD1F0F59ED00184A7B /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				FFDD7FDE1F0F5A1300184A7B /* DMChatCollectionView.h */,
-				FFDD7FDF1F0F5A1300184A7B /* DMChatCollectionView.m */,
 				FFDD7FEA1F0F5A7E00184A7B /* Message Views */,
 			);
 			name = Chat;
@@ -660,7 +655,6 @@
 				FF47DA9E1F1393A400FFCB5F /* DMGeolocationMessageCell.m in Sources */,
 				FFE9C73B1F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m in Sources */,
 				FF47DAA31F1393D400FFCB5F /* DMMessageCell.m in Sources */,
-				FFDD7FE01F0F5A1300184A7B /* DMChatCollectionView.m in Sources */,
 				FF47DAB11F149C0D00FFCB5F /* DMUtility.m in Sources */,
 				FF47DAAD1F14891D00FFCB5F /* DMUserListTableView.m in Sources */,
 				FFDD7F9B1F0CDD0800184A7B /* AppDelegate.m in Sources */,

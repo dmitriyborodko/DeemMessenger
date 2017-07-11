@@ -9,6 +9,8 @@
 #import "DMDialogHolder.h"
 #import "AppDelegate.h"
 
+#import "DMNetworking.h"
+
 @interface DMDialogHolder () <NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic, readwrite) NSFetchedResultsController *fetchedResultsController;
@@ -57,6 +59,17 @@
     _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
+}
+
+#pragma mark - Actions
+
+- (void)sendTextMessage:(NSString *)text {
+    
+    DMMessage *message = [DMMessage createWithText:text sender:[DMUser active]];
+    
+    [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
+        NSLog(@"Sent");
+    }];
 }
 
 #pragma  mark - Dialog Holder Delegate

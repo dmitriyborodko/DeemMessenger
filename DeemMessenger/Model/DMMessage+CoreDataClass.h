@@ -31,4 +31,14 @@ NS_ASSUME_NONNULL_END
 
 @property (nonatomic) DMMessageType type;
 
++ (DMMessage *)createWithType:(DMMessageType)type
+                         body:(NSData *)body
+                     dateSent:(NSDate *)dateSent
+                    messageId:(int16_t)messageId
+                     senderId:(int16_t)senderId;
+
++ (DMMessage *)createWithText:(NSString *)string sender:(DMUser *)sender;
+
+- (NSDictionary *)map;
+
 @end

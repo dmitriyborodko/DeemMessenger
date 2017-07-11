@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (DMUser *)active;
 + (DMUser *)inserOrUpdateWithDictionary:(NSDictionary *)dictionary;
++ (DMUser *)withId:(int64_t)userId;
 
 @end
 

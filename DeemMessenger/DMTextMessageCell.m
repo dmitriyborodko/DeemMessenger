@@ -19,6 +19,10 @@
     [super setupWith:message];
     
     
+    NSString *text = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+
+    
+    self.textLabel.text = text;
 }
 
 @end

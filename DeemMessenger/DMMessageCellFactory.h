@@ -14,7 +14,7 @@
 @interface DMMessageCellFactory : NSObject
 
 + (NSArray *)cellClasses;
-+ (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath;
++ (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forTableView:(UITableView *)tableView;
 + (CGSize)estimatedContentSizeOfMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth;
 
 @end

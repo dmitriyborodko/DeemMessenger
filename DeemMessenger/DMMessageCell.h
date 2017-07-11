@@ -10,10 +10,7 @@
 
 #import "DMMessage+CoreDataClass.h"
 
-@interface DMMessageCell : UICollectionViewCell
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightMargin;
+@interface DMMessageCell : UITableViewCell
 
 - (void)setupWith:(DMMessage *)message;
 

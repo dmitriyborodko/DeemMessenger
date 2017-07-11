@@ -12,4 +12,6 @@
 
 @interface DMTextMessageCell : DMMessageCell
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
 @end

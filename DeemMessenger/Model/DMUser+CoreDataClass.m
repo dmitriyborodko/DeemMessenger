@@ -100,6 +100,26 @@
     return user;
 }
 
++ (DMUser *)withId:(int64_t)userId {
+    NSFetchRequest<DMUser *> *fetchRequest = [DMUser fetchRequest];
+    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"userId" ascending:NO]];
+    fetchRequest.fetchLimit = 1;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %@", userId];
+    
+    NSError *error = nil;
+    NSArray<DMUser *> *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Error while fetching objects");
+    }
+    
+    if (!fetchedObjects.count) {
+        return nil;
+    } else {
+        return fetchedObjects.firstObject;
+    }
+}
+
 
 
 @end

@@ -7,9 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DMUser+CoreDataClass.h"
+
+@protocol DMDecepticonServing <NSObject>
+
+@required
+
+- (void)getDecepticonMessage:(NSDictionary *)dictionary;
+
+@end
 
 @interface DMDecepticon : NSObject
 
-+ (void)insertDecepticonToCoreDataIfNeeded;
++ (DMUser *)insertDecepticonToCoreDataIfNeeded;
++ (DMUser *)user;
++ (void)handleEarthMessage:(NSDictionary *)dictionary;
 
 @end

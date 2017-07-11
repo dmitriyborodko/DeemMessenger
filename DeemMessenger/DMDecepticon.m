@@ -9,19 +9,39 @@
 #import "DMDecepticon.h"
 #import "AppDelegate.h"
 #import "DMUtility.h"
-#import "DMUser+CoreDataClass.h"
+#import "DMNetworking.h"
 
 @implementation DMDecepticon
 
-+ (void)insertDecepticonToCoreDataIfNeeded {
++ (DMUser *)insertDecepticonToCoreDataIfNeeded {
     
     NSString *fileName = @"DecepticonUser";
     NSDictionary *jsonDictionary = [DMUtility dictionaryFromJSONFileNamed:fileName];
     
     if (jsonDictionary) {
-        [DMUser inserOrUpdateWithDictionary:jsonDictionary];
+        return [DMUser inserOrUpdateWithDictionary:jsonDictionary];
+    } else {
+        return nil;
     }
     
+}
+
++ (DMUser *)user {
+    NSFetchRequest *fetchRequest = [DMUser fetchRequest];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", 1];
+    NSError *error;
+    NSArray *decepticons = [fetchRequest execute:&error];
+    if (decepticons.count) {
+        return decepticons.firstObject;
+    } else {
+        return nil;
+    }
+}
+
++ (void)handleEarthMessage:(NSDictionary *)dictionary {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        [[DMNetworking sharedInstance] getDecepticonMessage:dictionary];
+    });
 }
 
 @end

@@ -20,7 +20,7 @@
     return @[[DMMessageCell class], [DMTextMessageCell class], [DMImageMessageCell class], [DMGeolocationMessageCell class]];
 }
 
-+ (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath {
++ (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forTableView:(UITableView *)tableView {
     
     Class cellClass;
     
@@ -47,7 +47,7 @@
         }
     }
     
-    return [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(cellClass) forIndexPath:indexPath];
+    return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
 }
 
 + (CGSize)estimatedContentSizeOfMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth {
