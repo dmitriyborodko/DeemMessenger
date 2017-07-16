@@ -11,6 +11,6 @@
 
 @interface DMUserListTableView : UITableView
 
-@property (weak, nonatomic, readonly) NSFetchedResultsController<DMUser *> *fetchedResultsController;
+@property (retain, nonatomic, readonly) NSFetchedResultsController<DMUser *> *fetchedResultsController;
 
 @end

@@ -12,7 +12,7 @@
 
 @interface DMUserListTableView () <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
-@property (weak, nonatomic, readwrite) NSFetchedResultsController<DMUser *> *fetchedResultsController;
+@property (retain, nonatomic, readwrite) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -22,6 +22,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    NSError *error = nil;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
     
     self.delegate = self;
     self.dataSource = self;
@@ -34,6 +40,10 @@
         return _fetchedResultsController;
     }
     
+    return [self newFetchedResultsController];
+}
+
+- (NSFetchedResultsController<DMUser *> *)newFetchedResultsController {
     NSFetchRequest *fetchRequest = [DMUser fetchRequest];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isActive == %d", NO];
@@ -45,13 +55,7 @@
     
     NSFetchedResultsController<DMUser *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     
-    NSError *error = nil;
-    if (![fetchedResultsController performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    _fetchedResultsController = fetchedResultsController;
+    self.fetchedResultsController = fetchedResultsController;
     _fetchedResultsController.delegate = self;
     
     return _fetchedResultsController;
@@ -69,20 +73,19 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
+#pragma mark - NSFetchedResultsControllerDelegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    switch (type) {
+        case NSFetchedResultsChangeInsert: {
+            [self insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationTop];
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

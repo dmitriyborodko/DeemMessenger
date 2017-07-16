@@ -104,7 +104,7 @@
     NSFetchRequest<DMUser *> *fetchRequest = [DMUser fetchRequest];
     fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"userId" ascending:NO]];
     fetchRequest.fetchLimit = 1;
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %@", userId];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", userId];
     
     NSError *error = nil;
     NSArray<DMUser *> *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];

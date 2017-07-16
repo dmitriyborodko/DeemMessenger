@@ -16,7 +16,8 @@
 }
 
 - (void)setupWith:(DMMessage *)message {
-    
+//    self.leftConstraint.active = message.sender.isActive;
+//    self.rightConstraint.active = !message.sender.isActive;
 }
 
 

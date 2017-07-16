@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "DMMessage+CoreDataClass.h"
+#import "DMUser+CoreDataClass.h"
 
 @interface DMMessageCell : UITableViewCell
 

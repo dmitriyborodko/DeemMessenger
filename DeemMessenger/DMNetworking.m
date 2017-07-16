@@ -49,6 +49,7 @@
     dispatch_async(self.serialQueue, ^{
         [DMDecepticon handleEarthMessage:messageDictionary];
     });
+    completionHandler(YES);
 }
 
 - (void)getDecepticonMessage:(NSDictionary *)dictionary {

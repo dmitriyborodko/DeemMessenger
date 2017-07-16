@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,19 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDq-5p-gGz">
-                        <rect key="frame" x="16" y="94" width="35" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-3w-mAO">
+                        <rect key="frame" x="8" y="8" width="359" height="194"/>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TDq-5p-gGz" firstAttribute="leading" secondItem="Aos-gq-2Yi" secondAttribute="leadingMargin" constant="8" id="6Nd-sq-zxR"/>
-                    <constraint firstItem="TDq-5p-gGz" firstAttribute="centerY" secondItem="Aos-gq-2Yi" secondAttribute="centerY" id="gSP-2Q-g4s"/>
+                    <constraint firstItem="GZs-3w-mAO" firstAttribute="leading" secondItem="Aos-gq-2Yi" secondAttribute="leading" constant="8" id="4Vf-17-9PK"/>
+                    <constraint firstItem="GZs-3w-mAO" firstAttribute="top" secondItem="Aos-gq-2Yi" secondAttribute="top" constant="8" id="JfU-mH-HfO"/>
+                    <constraint firstAttribute="bottom" secondItem="GZs-3w-mAO" secondAttribute="bottom" constant="8" id="cRk-dk-Zk9"/>
+                    <constraint firstAttribute="trailing" secondItem="GZs-3w-mAO" secondAttribute="trailing" constant="8" id="yuK-RY-vw3"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-208" y="84"/>
+            <connections>
+                <outlet property="imageMessage" destination="GZs-3w-mAO" id="udJ-PO-83t"/>
+            </connections>
+            <point key="canvasLocation" x="-208.5" y="84"/>
         </tableViewCell>
     </objects>
 </document>

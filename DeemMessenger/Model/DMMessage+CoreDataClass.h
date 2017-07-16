@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
 typedef enum : int16_t {
@@ -38,6 +39,7 @@ NS_ASSUME_NONNULL_END
                      senderId:(int16_t)senderId;
 
 + (DMMessage *)createWithText:(NSString *)string sender:(DMUser *)sender;
++ (DMMessage *)createWithImage:(UIImage *)image sender:(DMUser *)sender;
 
 - (NSDictionary *)map;
 

@@ -31,6 +31,12 @@
         message.sender = [DMUser withId:senderId];
         message.dateSent = dateSent;
         message.messageId = messageId;
+        
+        NSError *error;
+        [[AppDelegate managedObjectContext] save:&error];
+        if (error) {
+            NSLog(@"Error when saving Core Data - %@", error);
+        }
     }];
     
     return message;
@@ -39,6 +45,17 @@
 + (DMMessage *)createWithText:(NSString *)string sender:(DMUser *)sender {
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     return [DMMessage createWithType:kMessageTypeText
+                                body:data
+                            dateSent:[NSDate date]
+                           messageId:[DMMessage generateNewMessageId]
+                            senderId:sender.userId
+            ];
+}
+
++ (DMMessage *)createWithImage:(UIImage *)image sender:(DMUser *)sender {
+    
+    NSData *data = UIImageJPEGRepresentation(image, 1);
+    return [DMMessage createWithType:kMessageTypeImage
                                 body:data
                             dateSent:[NSDate date]
                            messageId:[DMMessage generateNewMessageId]

@@ -13,9 +13,10 @@
 #import "DMMessageCell.h"
 #import "DMMessageCellFactory.h"
 
-@interface DMChatVC () <UICollectionViewDelegateFlowLayout>
+@interface DMChatVC () <UICollectionViewDelegateFlowLayout, DMDialogHolderDelegate, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textInput;
+@property (weak, nonatomic) IBOutlet UIView *textInputView;
 
 @property (strong, nonatomic) DMDialogHolder *dialogHolder;
 
@@ -26,12 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
     self.title = self.companion.name;
+    
+    self.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
+    self.dialogHolder.delegate = self;
     
     for (Class viewClass in [DMMessageCellFactory cellClasses]) {
         [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(viewClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(viewClass)];
     }
+    
+    self.textInput.delegate = self;
     
 }
 
@@ -55,6 +60,22 @@
     return self.dialogHolder.fetchedResultsController.fetchedObjects.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.textInputView.frame.size.height;
+    } else {
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return self.textInputView;
+    } else {
+        return 0;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DMMessage *message = self.dialogHolder.fetchedResultsController.fetchedObjects[indexPath.row];
     DMMessageCell *cell = [DMMessageCellFactory dequeueCellWithMessage:message forTableView:tableView];
@@ -66,12 +87,74 @@
 
 #pragma mark - Controls
 
-- (IBAction)optionsPressed:(id)sender {
+- (IBAction)optionsPressed:(UIButton *)sender {
     
+    [self openDropDownFrom:sender];
+    
+}
+
+- (void)openDropDownFrom:(UIButton *)button {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *imageAction = [UIAlertAction actionWithTitle:@"Choose image from Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self showImagePicker];
+    }];
+    
+    UIAlertAction *geolocationAction = [UIAlertAction actionWithTitle:@"Send your geolocation" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:imageAction];
+    [alertController addAction:geolocationAction];
+    [alertController addAction:cancelAction];
+    
+    alertController.popoverPresentationController.sourceView = button;
+    alertController.popoverPresentationController.sourceRect = button.bounds;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)showImagePicker {
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePickerController.delegate = self;
+    imagePickerController.modalPresentationStyle = UIModalPresentationPopover;
+    imagePickerController.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    UIPopoverPresentationController *presentationController = imagePickerController.popoverPresentationController;
+    presentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 
 - (IBAction)sendPressed:(id)sender {
     [self.dialogHolder sendTextMessage:self.textInput.text];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.dialogHolder sendTextMessage:self.textInput.text];
+    return YES;
+}
+
+#pragma mark - Dialog Holder Delegate
+
+- (void)messageSent {
+    self.textInput.text = nil;
+}
+
+- (void)insertObjectForIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+}
+
+#pragma mark - Image Picker Controller Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    UIImage *image = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [self.dialogHolder sendImageMessage:image];
 }
 
 /*

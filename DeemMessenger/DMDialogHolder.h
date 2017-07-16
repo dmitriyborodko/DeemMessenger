@@ -16,19 +16,22 @@
 
 @required
 
+- (void)messageSent;
+- (void)insertObjectForIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
 @interface DMDialogHolder : NSObject
 
 @property (weak, nonatomic) DMUser *companion;
-@property (weak, nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+@property (retain, nonatomic, readwrite) NSFetchedResultsController *fetchedResultsController;
 
-@property (nonatomic, weak) id <DMDialogHolderDelegate> delegate;
+@property (strong, nonatomic) id <DMDialogHolderDelegate> delegate;
 
 - (instancetype)initWithCompanion:(DMUser *)companion;
 
 - (void)sendTextMessage:(NSString *)text;
-- (void)sendImage:(UIImage *)image;
-- (void)sendGeolocation;
+- (void)sendImageMessage:(UIImage *)image;
+- (void)sendGeolocationMessage;
 
 @end
