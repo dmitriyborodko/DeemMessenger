@@ -12,11 +12,13 @@
 
 @interface DMGeolocationMessageCell ()
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *activeObject;
 
 @end
 
 @implementation DMGeolocationMessageCell
+
+@synthesize activeObject = _mapView;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -26,7 +28,7 @@
 - (void)setupWith:(DMMessage *)message {
     [super setupWith:message];
     
-    self.mapView.hidden = YES;
+    _mapView.hidden = YES;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
@@ -41,9 +43,9 @@
             [annotation setTitle:message.sender.name];
             
             dispatch_async(dispatch_get_main_queue(), ^(void){
-                self.mapView.hidden = NO;
-                [self.mapView setRegion:region animated:YES];
-                [self.mapView addAnnotation:annotation];
+                _mapView.hidden = NO;
+                [_mapView setRegion:region animated:YES];
+                [_mapView addAnnotation:annotation];
             });
         }
     });

@@ -11,17 +11,13 @@
 
 @interface DMImageMessageCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageMessage;
-
-@end
-
-@interface UIImage (Resizable)
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *activeObject;
 
 @end
 
 @implementation DMImageMessageCell
+
+@synthesize activeObject = _imageMessage;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -31,19 +27,19 @@
 - (void)setupWith:(DMMessage *)message {
     [super setupWith:message];
     
-    self.imageMessage.image = nil;
+    _imageMessage.image = nil;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         if (message.body) {
             NSString *path = [DMUtility pathForImageWithName:message.body];
-            CGFloat imageMessageSide = MIN(self.imageMessage.frame.size.width, self.imageMessage.frame.size.height);
+            CGFloat imageMessageSide = MIN(_imageMessage.frame.size.width, _imageMessage.frame.size.height);
             UIImage *image = [DMUtility imageWithImage:[UIImage imageWithContentsOfFile:path]
                                           scaledToSize:CGSizeMake(imageMessageSide, imageMessageSide)];
             
             if (image) {
                 dispatch_async(dispatch_get_main_queue(), ^(void){
-                    self.imageMessage.image = image;
+                    _imageMessage.image = image;
                 });
             }
         }

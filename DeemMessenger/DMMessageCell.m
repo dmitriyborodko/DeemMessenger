@@ -12,20 +12,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     // Initialization code
 }
 
 - (void)setupWith:(DMMessage *)message {
     
-//    if (message.sender.isActive) {
-//        self.leftMargin.
-//    } else {
-//        <#statements#>
-//    }
-//    
-//    
-//    self.leftMargin.active = message.sender.isActive;
 }
-
 
 @end

@@ -10,11 +10,13 @@
 
 @interface DMTextMessageCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *textMessage;
+@property (weak, nonatomic) IBOutlet UILabel *activeObject;
 
 @end
 
 @implementation DMTextMessageCell
+
+@synthesize activeObject = _textMessage;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -24,7 +26,7 @@
 - (void)setupWith:(DMMessage *)message {
     [super setupWith:message];
     
-    self.textMessage.text = message.body;
+    _textMessage.text = message.body;
 }
 
 @end

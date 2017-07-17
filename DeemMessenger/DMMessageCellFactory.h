@@ -13,7 +13,7 @@
 
 @interface DMMessageCellFactory : NSObject
 
-+ (NSArray *)cellClasses;
++ (void)registerNibsForTableView:(UITableView *)tableView;
 + (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forTableView:(UITableView *)tableView;
 + (CGFloat)estimatedHeightForCellWithMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth;
 

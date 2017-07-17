@@ -14,30 +14,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="210" id="a5D-69-a1m" customClass="DMGeolocationMessageCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+            <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5D-69-a1m" id="5MS-fm-UU9">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                <rect key="frame" x="0.0" y="0.0" width="210" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Rh-OE-eaT">
-                        <rect key="frame" x="16" y="8" width="194" height="194"/>
+                        <rect key="frame" x="8" y="8" width="194" height="194"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="6Rh-OE-eaT" secondAttribute="height" multiplier="1:1" id="dac-lc-A2e"/>
                         </constraints>
                     </mapView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="6Rh-OE-eaT" firstAttribute="leading" secondItem="5MS-fm-UU9" secondAttribute="leading" constant="8" id="AZe-Wo-lfE"/>
                     <constraint firstItem="6Rh-OE-eaT" firstAttribute="top" secondItem="5MS-fm-UU9" secondAttribute="topMargin" id="GOb-HL-Lh4"/>
-                    <constraint firstItem="6Rh-OE-eaT" firstAttribute="leading" secondItem="5MS-fm-UU9" secondAttribute="leadingMargin" constant="8" id="gXB-cy-9CA"/>
                     <constraint firstItem="6Rh-OE-eaT" firstAttribute="bottom" secondItem="5MS-fm-UU9" secondAttribute="bottomMargin" id="iuR-7M-Lxg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="leftMargin" destination="gXB-cy-9CA" id="R8H-f8-zXq"/>
-                <outlet property="mapView" destination="6Rh-OE-eaT" id="A8L-dJ-tJ8"/>
+                <outlet property="activeObject" destination="6Rh-OE-eaT" id="4bd-HD-7jT"/>
             </connections>
-            <point key="canvasLocation" x="-208.5" y="84"/>
+            <point key="canvasLocation" x="-209" y="84"/>
         </tableViewCell>
     </objects>
 </document>

@@ -42,9 +42,7 @@
     
     [self setOptionLoading:NO];
     
-    for (Class viewClass in [DMMessageCellFactory cellClasses]) {
-        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(viewClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(viewClass)];
-    }
+    [DMMessageCellFactory registerNibsForTableView:self.tableView];
     
     self.textInput.delegate = self;
     

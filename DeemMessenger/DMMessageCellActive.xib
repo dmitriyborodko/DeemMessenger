@@ -20,22 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X40-d2-Egm">
-                        <rect key="frame" x="28" y="104" width="105.5" height="21"/>
+                        <rect key="frame" x="8" y="104" width="105.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="X40-d2-Egm" firstAttribute="leading" secondItem="BCx-Gy-caA" secondAttribute="leadingMargin" constant="20" id="Gxb-7B-WcM"/>
+                    <constraint firstItem="X40-d2-Egm" firstAttribute="leading" secondItem="BCx-Gy-caA" secondAttribute="leadingMargin" id="Gxb-7B-WcM"/>
                     <constraint firstItem="X40-d2-Egm" firstAttribute="centerY" secondItem="BCx-Gy-caA" secondAttribute="centerY" id="VfC-Ea-dw0"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="activeObject" destination="X40-d2-Egm" id="7vd-ys-bMD"/>
-                <outlet property="margin" destination="Gxb-7B-WcM" id="QF8-4F-KaF"/>
+                <outlet property="activeObject" destination="X40-d2-Egm" id="LuB-RH-cEx"/>
             </connections>
-            <point key="canvasLocation" x="-719" y="157"/>
+            <point key="canvasLocation" x="-719.5" y="156.5"/>
         </tableViewCell>
     </objects>
 </document>

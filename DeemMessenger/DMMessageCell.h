@@ -12,8 +12,7 @@
 #import "DMUser+CoreDataClass.h"
 
 @interface DMMessageCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *margin;
-@property (weak, nonatomic) IBOutlet UILabel *activeObject;
+@property (weak, nonatomic) IBOutlet UIView *activeObject;
 
 - (void)setupWith:(DMMessage *)message;
 

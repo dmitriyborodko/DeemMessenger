@@ -12,13 +12,13 @@
 		5FD7AAC31EFD252FC372D8C6 /* libPods-DeemMessengerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42A2E7C40B95F0AB6DD9515 /* libPods-DeemMessengerTests.a */; };
 		FF47DA7E1F1380C100FFCB5F /* DMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */; };
 		FF47DA941F13936C00FFCB5F /* DMTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */; };
-		FF47DA951F13936C00FFCB5F /* DMTextMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA931F13936C00FFCB5F /* DMTextMessageCell.xib */; };
+		FF47DA951F13936C00FFCB5F /* DMTextMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */; };
 		FF47DA991F13938C00FFCB5F /* DMImageMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */; };
-		FF47DA9A1F13938C00FFCB5F /* DMImageMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA981F13938C00FFCB5F /* DMImageMessageCell.xib */; };
+		FF47DA9A1F13938C00FFCB5F /* DMImageMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */; };
 		FF47DA9E1F1393A400FFCB5F /* DMGeolocationMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */; };
-		FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCell.xib */; };
+		FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */; };
 		FF47DAA31F1393D400FFCB5F /* DMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */; };
-		FF47DAA41F1393D400FFCB5F /* DMMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAA21F1393D400FFCB5F /* DMMessageCell.xib */; };
+		FF47DAA41F1393D400FFCB5F /* DMMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */; };
 		FF47DAA71F139CDD00FFCB5F /* DMMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */; };
 		FF47DAAA1F14889A00FFCB5F /* DMUserListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA91F14889A00FFCB5F /* DMUserListVC.m */; };
 		FF47DAAD1F14891D00FFCB5F /* DMUserListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAAC1F14891D00FFCB5F /* DMUserListTableView.m */; };
@@ -26,6 +26,10 @@
 		FF47DAB41F149C7600FFCB5F /* NSDictionary+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */; };
 		FF47DAB61F14B46A00FFCB5F /* ActiveUser.json in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */; };
 		FFA036251F1CC24A00EEBD1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */; };
+		FFA036271F1CF0D400EEBD1B /* DMMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */; };
+		FFA036291F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */; };
+		FFA0362B1F1CF10000EEBD1B /* DMImageMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */; };
+		FFA0362D1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */; };
 		FFDD7F981F0CDD0800184A7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F971F0CDD0800184A7B /* main.m */; };
 		FFDD7F9B1F0CDD0800184A7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F9A1F0CDD0800184A7B /* AppDelegate.m */; };
 		FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */; };
@@ -75,16 +79,16 @@
 		FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNetworking.m; sourceTree = "<group>"; };
 		FF47DA911F13936C00FFCB5F /* DMTextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTextMessageCell.h; sourceTree = "<group>"; };
 		FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTextMessageCell.m; sourceTree = "<group>"; };
-		FF47DA931F13936C00FFCB5F /* DMTextMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMTextMessageCell.xib; sourceTree = "<group>"; };
+		FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMTextMessageCellActive.xib; sourceTree = "<group>"; };
 		FF47DA961F13938C00FFCB5F /* DMImageMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMImageMessageCell.h; sourceTree = "<group>"; };
 		FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMImageMessageCell.m; sourceTree = "<group>"; };
-		FF47DA981F13938C00FFCB5F /* DMImageMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMImageMessageCell.xib; sourceTree = "<group>"; };
+		FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMImageMessageCellActive.xib; sourceTree = "<group>"; };
 		FF47DA9B1F1393A400FFCB5F /* DMGeolocationMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGeolocationMessageCell.h; sourceTree = "<group>"; };
 		FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGeolocationMessageCell.m; sourceTree = "<group>"; };
-		FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCell.xib; sourceTree = "<group>"; };
+		FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCellActive.xib; sourceTree = "<group>"; };
 		FF47DAA01F1393D400FFCB5F /* DMMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMessageCell.h; sourceTree = "<group>"; };
 		FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMessageCell.m; sourceTree = "<group>"; };
-		FF47DAA21F1393D400FFCB5F /* DMMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMMessageCell.xib; sourceTree = "<group>"; };
+		FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMMessageCellActive.xib; sourceTree = "<group>"; };
 		FF47DAA51F139CDD00FFCB5F /* DMMessageCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMessageCellFactory.h; sourceTree = "<group>"; };
 		FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMessageCellFactory.m; sourceTree = "<group>"; };
 		FF47DAA81F14889A00FFCB5F /* DMUserListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserListVC.h; sourceTree = "<group>"; };
@@ -97,6 +101,10 @@
 		FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Validation.m"; sourceTree = "<group>"; };
 		FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActiveUser.json; sourceTree = "<group>"; };
 		FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMTextMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMImageMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCellSender.xib; sourceTree = "<group>"; };
 		FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeemMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDD7F971F0CDD0800184A7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FFDD7F991F0CDD0800184A7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -329,7 +337,8 @@
 				FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */,
 				FF47DAA01F1393D400FFCB5F /* DMMessageCell.h */,
 				FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */,
-				FF47DAA21F1393D400FFCB5F /* DMMessageCell.xib */,
+				FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */,
+				FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */,
 				FFDD7FFA1F0F60C500184A7B /* Text Message */,
 				FFDD7FFB1F0F60CE00184A7B /* Image Message */,
 				FFDD7FFC1F0F60DC00184A7B /* Geolocation Message */,
@@ -342,7 +351,8 @@
 			children = (
 				FF47DA911F13936C00FFCB5F /* DMTextMessageCell.h */,
 				FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */,
-				FF47DA931F13936C00FFCB5F /* DMTextMessageCell.xib */,
+				FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */,
+				FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */,
 			);
 			name = "Text Message";
 			sourceTree = "<group>";
@@ -352,7 +362,8 @@
 			children = (
 				FF47DA961F13938C00FFCB5F /* DMImageMessageCell.h */,
 				FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */,
-				FF47DA981F13938C00FFCB5F /* DMImageMessageCell.xib */,
+				FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */,
+				FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */,
 			);
 			name = "Image Message";
 			sourceTree = "<group>";
@@ -362,7 +373,8 @@
 			children = (
 				FF47DA9B1F1393A400FFCB5F /* DMGeolocationMessageCell.h */,
 				FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */,
-				FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCell.xib */,
+				FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */,
+				FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */,
 			);
 			name = "Geolocation Message";
 			sourceTree = "<group>";
@@ -485,15 +497,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF47DAA41F1393D400FFCB5F /* DMMessageCell.xib in Resources */,
+				FF47DAA41F1393D400FFCB5F /* DMMessageCellActive.xib in Resources */,
+				FFA036291F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib in Resources */,
 				FF47DAB61F14B46A00FFCB5F /* ActiveUser.json in Resources */,
-				FF47DA9A1F13938C00FFCB5F /* DMImageMessageCell.xib in Resources */,
-				FF47DA951F13936C00FFCB5F /* DMTextMessageCell.xib in Resources */,
+				FF47DA9A1F13938C00FFCB5F /* DMImageMessageCellActive.xib in Resources */,
+				FFA036271F1CF0D400EEBD1B /* DMMessageCellSender.xib in Resources */,
+				FF47DA951F13936C00FFCB5F /* DMTextMessageCellActive.xib in Resources */,
 				FFDD7FA91F0CDD0800184A7B /* LaunchScreen.storyboard in Resources */,
+				FFA0362D1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib in Resources */,
+				FFA0362B1F1CF10000EEBD1B /* DMImageMessageCellSender.xib in Resources */,
 				FFDD801A1F0F6B7D00184A7B /* DecepticonUser.json in Resources */,
 				FFDD7FA61F0CDD0800184A7B /* Assets.xcassets in Resources */,
 				FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */,
-				FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCell.xib in Resources */,
+				FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

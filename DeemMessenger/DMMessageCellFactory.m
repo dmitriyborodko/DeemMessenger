@@ -20,34 +20,77 @@
     return @[[DMMessageCell class], [DMTextMessageCell class], [DMImageMessageCell class], [DMGeolocationMessageCell class]];
 }
 
++ (NSString *)nibNameForClass:(Class)class fromActiveUser:(BOOL)fromActive {
+    NSString *postString = (fromActive ? @"Active" : @"Sender");
+    return [NSStringFromClass(class) stringByAppendingString:postString];
+}
+
++ (void)registerNibsForTableView:(UITableView *)tableView {
+    for (Class class in [DMMessageCellFactory cellClasses]) {
+        //Message from active user
+        [tableView registerNib:[UINib nibWithNibName:[DMMessageCellFactory nibNameForClass:class fromActiveUser:YES]
+                                              bundle:nil]
+        forCellReuseIdentifier:[DMMessageCellFactory nibNameForClass:class fromActiveUser:YES]];
+        
+        //Message from sender
+        [tableView registerNib:[UINib nibWithNibName:[DMMessageCellFactory nibNameForClass:class fromActiveUser:NO]
+                                              bundle:nil]
+        forCellReuseIdentifier:[DMMessageCellFactory nibNameForClass:class fromActiveUser:NO]];
+    }
+}
+
 + (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forTableView:(UITableView *)tableView {
     
-    Class cellClass;
+    NSString *cellIdentifier;
     
     switch (message.type) {
         case kMessageTypeText: {
-            cellClass = [DMTextMessageCell class];
+            
+            if (message.sender.isActive) {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMTextMessageCell class] fromActiveUser:YES];
+            } else {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMTextMessageCell class] fromActiveUser:NO];
+            }
+            
             break;
         }
             
         case kMessageTypeImage: {
-            cellClass = [DMImageMessageCell class];
+            
+            if (message.sender.isActive) {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMImageMessageCell class] fromActiveUser:YES];
+            } else {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMImageMessageCell class] fromActiveUser:NO];
+            }
+            
             break;
         }
             
         case kMessageTypeGeolocation: {
-            cellClass = [DMGeolocationMessageCell class];
+            
+            if (message.sender.isActive) {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMGeolocationMessageCell class] fromActiveUser:YES];
+            } else {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMGeolocationMessageCell class] fromActiveUser:NO];
+            }
+            
             break;
         }
             
         default: {
-            cellClass = [DMMessageCell class];
+            
+            if (message.sender.isActive) {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMMessageCell class] fromActiveUser:YES];
+            } else {
+                cellIdentifier = [DMMessageCellFactory nibNameForClass:[DMMessageCell class] fromActiveUser:NO];
+            }
+            
             NSLog(@"Unknown message cell type!");
             break;
         }
     }
     
-    return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
+    return [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 }
 
 + (CGFloat)estimatedHeightForCellWithMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth {
