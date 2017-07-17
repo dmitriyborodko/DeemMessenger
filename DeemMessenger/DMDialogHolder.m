@@ -7,7 +7,7 @@
 //
 
 #import "DMDialogHolder.h"
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 
 #import "DMNetworking.h"
 
@@ -45,14 +45,14 @@
 
 - (NSFetchedResultsController<DMMessage *> *)newFetchedResultsController {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMMessage class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMMessage class]) inManagedObjectContext:[DMAppDelegate managedObjectContext]];
     fetchRequest.entity = entity;
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dateSent"
                                                                    ascending:NO];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
-    NSFetchedResultsController<DMMessage *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController<DMMessage *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[DMAppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     
     self.fetchedResultsController = fetchedResultsController;
     _fetchedResultsController.delegate = self;

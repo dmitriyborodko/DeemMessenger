@@ -9,7 +9,7 @@
 #import "DMMessage+CoreDataClass.h"
 #import "DMUser+CoreDataClass.h"
 #import "DMUtility.h"
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 
 dispatch_queue_t generateIdQueue() {
     static dispatch_once_t queueCreationGuard;
@@ -188,9 +188,9 @@ dispatch_queue_t generateIdQueue() {
     
     __block DMMessage *message;
     
-    [[AppDelegate managedObjectContext] performBlockAndWait:^{
-        NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMMessage class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
-        message = [[DMMessage alloc] initWithEntity:entity insertIntoManagedObjectContext:[AppDelegate managedObjectContext]];
+    [[DMAppDelegate managedObjectContext] performBlockAndWait:^{
+        NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMMessage class]) inManagedObjectContext:[DMAppDelegate managedObjectContext]];
+        message = [[DMMessage alloc] initWithEntity:entity insertIntoManagedObjectContext:[DMAppDelegate managedObjectContext]];
         
         message.body = body;
         message.type = type;
@@ -199,7 +199,7 @@ dispatch_queue_t generateIdQueue() {
         message.messageId = messageId;
         
         NSError *error;
-        [[AppDelegate managedObjectContext] save:&error];
+        [[DMAppDelegate managedObjectContext] save:&error];
         if (error) {
             NSLog(@"Error when saving Core Data - %@", error);
         }
@@ -235,7 +235,7 @@ dispatch_queue_t generateIdQueue() {
     fetchRequest.fetchLimit = 1;
     
     NSError *error = nil;
-    NSArray<DMMessage *> *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    NSArray<DMMessage *> *fetchedObjects = [[DMAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
     
     if (error) {
         NSLog(@"Error while fetching objects");

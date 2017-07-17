@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  DMAppDelegate.m
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 05/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 
-@interface AppDelegate ()
+@interface DMAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation DMAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -84,12 +84,12 @@
 
 #pragma mark - Core Data Saving support
 
-+ (AppDelegate *)sharedInstance {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
++ (DMAppDelegate *)sharedInstance {
+    return (DMAppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 + (NSManagedObjectContext *)managedObjectContext {
-    return [AppDelegate sharedInstance].persistentContainer.viewContext;
+    return [DMAppDelegate sharedInstance].persistentContainer.viewContext;
 }
 
 - (void)saveContext {

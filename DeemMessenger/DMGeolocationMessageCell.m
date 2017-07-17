@@ -29,6 +29,7 @@
     [super setupWith:message];
     
     _mapView.hidden = YES;
+    [_mapView removeAnnotations:[_mapView annotations]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         

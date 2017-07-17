@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="125.4872563718141"/>
+            <point key="canvasLocation" x="388" y="125"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="xnh-XP-dSe">
@@ -156,7 +156,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1323" y="125"/>
+            <point key="canvasLocation" x="1249" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EI3-Y8-vwt">

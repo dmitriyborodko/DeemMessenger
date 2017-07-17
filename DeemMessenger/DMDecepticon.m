@@ -7,9 +7,11 @@
 //
 
 #import "DMDecepticon.h"
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 #import "DMUtility.h"
 #import "DMNetworking.h"
+
+#define kDecepticonId (int64_t)2
 
 @implementation DMDecepticon
 
@@ -27,23 +29,7 @@
 }
 
 + (DMUser *)user {
-    __block DMUser *user;
-    
-    [[AppDelegate managedObjectContext] performBlockAndWait:^{
-        NSFetchRequest *fetchRequest = [DMUser fetchRequest];
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", 2];
-        NSError *error;
-        NSArray *decepticons = [fetchRequest execute:&error];
-        if (decepticons.count) {
-            user = decepticons.firstObject;
-        } else {
-            user = nil;
-        }
-    }];
-    
-    return user;
-    
-    
+    return [DMUser withId:kDecepticonId];
 }
 
 + (void)handleEarthMessage:(NSDictionary *)dictionary {

@@ -7,7 +7,7 @@
 //
 
 #import "DMUserListTableView.h"
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 #import "DMDecepticon.h"
 
 @interface DMUserListTableView () <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
@@ -53,7 +53,7 @@
                                                                    ascending:YES];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
-    NSFetchedResultsController<DMUser *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[AppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController<DMUser *> *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[DMAppDelegate managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
     
     self.fetchedResultsController = fetchedResultsController;
     _fetchedResultsController.delegate = self;

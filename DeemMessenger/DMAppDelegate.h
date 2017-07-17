@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  DMAppDelegate.h
 //  DeemMessenger
 //
 //  Created by ALS_Deem on 05/07/2017.
@@ -11,11 +11,11 @@
 
 #import "DMUser+CoreDataClass.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface DMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-+ (AppDelegate *)sharedInstance;
++ (DMAppDelegate *)sharedInstance;
 + (NSManagedObjectContext *)managedObjectContext;
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;

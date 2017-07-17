@@ -31,7 +31,7 @@
 		FFA0362B1F1CF10000EEBD1B /* DMImageMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */; };
 		FFA0362D1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */; };
 		FFDD7F981F0CDD0800184A7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F971F0CDD0800184A7B /* main.m */; };
-		FFDD7F9B1F0CDD0800184A7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F9A1F0CDD0800184A7B /* AppDelegate.m */; };
+		FFDD7F9B1F0CDD0800184A7B /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */; };
 		FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */; };
 		FFDD7FA41F0CDD0800184A7B /* DeemMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */; };
 		FFDD7FA61F0CDD0800184A7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */; };
@@ -107,8 +107,8 @@
 		FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCellSender.xib; sourceTree = "<group>"; };
 		FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeemMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDD7F971F0CDD0800184A7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FFDD7F991F0CDD0800184A7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FFDD7F9A1F0CDD0800184A7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FFDD7F991F0CDD0800184A7B /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
+		FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
 		FFDD7FA01F0CDD0800184A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFDD7FA31F0CDD0800184A7B /* DeemMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeemMessenger.xcdatamodel; sourceTree = "<group>"; };
 		FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +180,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		95C8FFBC1F1D2C8D00B22971 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FFD1F0F61B000184A7B /* DMDialogHolder.h */,
+				FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */,
+				FF47DA7C1F1380C100FFCB5F /* DMNetworking.h */,
+				FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		9AE188CAB8529E809394C3C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,11 +237,12 @@
 			isa = PBXGroup;
 			children = (
 				FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */,
-				FFDD7F991F0CDD0800184A7B /* AppDelegate.h */,
-				FFDD7F9A1F0CDD0800184A7B /* AppDelegate.m */,
-				FFDD7FCD1F0CF99800184A7B /* Utility */,
+				FFDD7F991F0CDD0800184A7B /* DMAppDelegate.h */,
+				FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */,
+				95C8FFBC1F1D2C8D00B22971 /* Managers */,
 				FFDD7FCE1F0CF9B200184A7B /* View Controllers */,
 				FFDD7FCF1F0CF9BB00184A7B /* Views */,
+				FFDD7FCD1F0CF99800184A7B /* Utility */,
 				FFDD7FD01F0CF9CC00184A7B /* Model */,
 				FFDD7F961F0CDD0800184A7B /* Supporting Files */,
 			);
@@ -240,14 +252,11 @@
 		FFDD7F961F0CDD0800184A7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */,
 				FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */,
 				FFDD7FA71F0CDD0800184A7B /* LaunchScreen.storyboard */,
 				FFDD7FAA1F0CDD0800184A7B /* Info.plist */,
 				FFDD7F971F0CDD0800184A7B /* main.m */,
 				FFDD7FD11F0E01B400184A7B /* PrefixHeader.pch */,
-				FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */,
-				FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,10 +282,6 @@
 		FFDD7FCD1F0CF99800184A7B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				FFDD7FFD1F0F61B000184A7B /* DMDialogHolder.h */,
-				FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */,
-				FF47DA7C1F1380C100FFCB5F /* DMNetworking.h */,
-				FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */,
 				FFDD801B1F0F6C2D00184A7B /* DMDecepticon.h */,
 				FFDD801C1F0F6C2D00184A7B /* DMDecepticon.m */,
 				FF47DAAF1F149C0D00FFCB5F /* DMUtility.h */,
@@ -310,6 +315,7 @@
 		FFDD7FD01F0CF9CC00184A7B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */,
 				FFE9C7321F14C60A002C9EC7 /* DMMessage+CoreDataClass.h */,
 				FFE9C7331F14C60A002C9EC7 /* DMMessage+CoreDataClass.m */,
 				FFE9C7341F14C60A002C9EC7 /* DMMessage+CoreDataProperties.h */,
@@ -318,6 +324,8 @@
 				FFE9C7371F14C60A002C9EC7 /* DMUser+CoreDataClass.m */,
 				FFE9C7381F14C60A002C9EC7 /* DMUser+CoreDataProperties.h */,
 				FFE9C7391F14C60A002C9EC7 /* DMUser+CoreDataProperties.m */,
+				FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */,
+				FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -677,7 +685,7 @@
 				FF47DAA31F1393D400FFCB5F /* DMMessageCell.m in Sources */,
 				FF47DAB11F149C0D00FFCB5F /* DMUtility.m in Sources */,
 				FF47DAAD1F14891D00FFCB5F /* DMUserListTableView.m in Sources */,
-				FFDD7F9B1F0CDD0800184A7B /* AppDelegate.m in Sources */,
+				FFDD7F9B1F0CDD0800184A7B /* DMAppDelegate.m in Sources */,
 				FFE9C73A1F14C60A002C9EC7 /* DMMessage+CoreDataClass.m in Sources */,
 				FF47DA7E1F1380C100FFCB5F /* DMNetworking.m in Sources */,
 				FF47DAAA1F14889A00FFCB5F /* DMUserListVC.m in Sources */,

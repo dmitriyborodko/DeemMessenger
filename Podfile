@@ -7,8 +7,6 @@ target 'DeemMessenger' do
 
   # Pods for DeemMessenger
   
-  pod 'TPKeyboardAvoiding'
-
   target 'DeemMessengerTests' do
     inherit! :search_paths
     # Pods for testing

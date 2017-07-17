@@ -16,7 +16,8 @@
 
 + (NSArray *)cellClasses {
     // It is possible to get subsclasses in runtime, but this is not safe - if we add some class accidently we may catch hard to be found error.
-    // But what we can do - is to check this array to be equal to
+    // But what we can do - is to check this array to be equal to classes for messages.
+    // This logic is more complex - much more efitient is to use #define for cellIdentifier and registerNibsForTableView . But this logic is more simple for development, and easy to refactor if we face real lag issues.
     return @[[DMMessageCell class], [DMTextMessageCell class], [DMImageMessageCell class], [DMGeolocationMessageCell class]];
 }
 

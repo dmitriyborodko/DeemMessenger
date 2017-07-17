@@ -9,7 +9,7 @@
 #import "DMUser+CoreDataClass.h"
 #import "DMMessage+CoreDataClass.h"
 
-#import "AppDelegate.h"
+#import "DMAppDelegate.h"
 
 #import "NSDictionary+Validation.h"
 #import "DMUtility.h"
@@ -18,22 +18,22 @@
 
 + (DMUser *)active {
     
-    if ([AppDelegate sharedInstance].user) {
-        return [AppDelegate sharedInstance].user;
+    if ([DMAppDelegate sharedInstance].user) {
+        return [DMAppDelegate sharedInstance].user;
     }
     
     __block DMUser *user = nil;
     
-    [[AppDelegate managedObjectContext] performBlockAndWait:^{
+    [[DMAppDelegate managedObjectContext] performBlockAndWait:^{
         
-        if ([AppDelegate sharedInstance].user) {
-            user = [AppDelegate sharedInstance].user;
+        if ([DMAppDelegate sharedInstance].user) {
+            user = [DMAppDelegate sharedInstance].user;
         } else {
             NSFetchRequest *fetchRequest = [DMUser fetchRequest];
             fetchRequest.predicate = [NSPredicate predicateWithFormat:@"isActive == %d", YES];
             
             NSError *error = nil;
-            NSArray *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+            NSArray *fetchedObjects = [[DMAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
             
             if (fetchedObjects.count) {
                 user = [fetchedObjects firstObject];
@@ -43,7 +43,7 @@
                 user = [DMUser inserOrUpdateWithDictionary:userJSON];
             }
             
-            [AppDelegate sharedInstance].user = user;
+            [DMAppDelegate sharedInstance].user = user;
         }
     }];
     
@@ -54,7 +54,7 @@
     
     __block DMUser *user = nil;
     
-    [[AppDelegate managedObjectContext] performBlockAndWait:^{
+    [[DMAppDelegate managedObjectContext] performBlockAndWait:^{
         user = [self insertOrUpdateWithDictionaryUnsafe:dictionary];
     }];
     
@@ -72,7 +72,7 @@
         fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", userId];
         
         NSError *error = nil;
-        NSArray *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+        NSArray *fetchedObjects = [[DMAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
         
         if (fetchedObjects.count) {
             DMUser *foundUser = [fetchedObjects firstObject];
@@ -80,8 +80,8 @@
         }
         
         else {
-            NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMUser class]) inManagedObjectContext:[AppDelegate managedObjectContext]];
-            user = [[DMUser alloc] initWithEntity:entity insertIntoManagedObjectContext:[AppDelegate managedObjectContext]];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([DMUser class]) inManagedObjectContext:[DMAppDelegate managedObjectContext]];
+            user = [[DMUser alloc] initWithEntity:entity insertIntoManagedObjectContext:[DMAppDelegate managedObjectContext]];
             user.userId = [object intValue];
         }
         
@@ -95,7 +95,7 @@
         
         NSLog(@"%lu", user.messages.count);
         
-        [[AppDelegate managedObjectContext] save:&error];
+        [[DMAppDelegate managedObjectContext] save:&error];
         
     }];
     
@@ -109,7 +109,7 @@
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"userId == %d", userId];
     
     NSError *error = nil;
-    NSArray<DMUser *> *fetchedObjects = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    NSArray<DMUser *> *fetchedObjects = [[DMAppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
     
     if (error) {
         NSLog(@"Error while fetching objects");
