@@ -12,12 +12,16 @@
 
 #import "DMMessageCell.h"
 #import "DMMessageCellFactory.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface DMChatVC () <UICollectionViewDelegateFlowLayout, DMDialogHolderDelegate, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DMChatVC () <UICollectionViewDelegateFlowLayout, DMDialogHolderDelegate, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textInput;
 @property (weak, nonatomic) IBOutlet UIView *textInputView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *optionsButton;
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) DMDialogHolder *dialogHolder;
 
 @end
@@ -31,6 +35,12 @@
     
     self.dialogHolder = [[DMDialogHolder alloc] initWithCompanion:self.companion];
     self.dialogHolder.delegate = self;
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    
+    [self setOptionLoading:NO];
     
     for (Class viewClass in [DMMessageCellFactory cellClasses]) {
         [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(viewClass) bundle:nil] forCellReuseIdentifier:NSStringFromClass(viewClass)];
@@ -60,10 +70,10 @@
     return self.dialogHolder.fetchedResultsController.fetchedObjects.count;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DMMessage *message = self.dialogHolder.fetchedResultsController.fetchedObjects[indexPath.row];
-//    return [DMMessageCellFactory estimatedHeightForCellWithMessage:message forScreenWidth:self.view.frame.size.width];
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DMMessage *message = self.dialogHolder.fetchedResultsController.fetchedObjects[indexPath.row];
+    return [DMMessageCellFactory estimatedHeightForCellWithMessage:message forScreenWidth:self.view.frame.size.width];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -102,11 +112,11 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *imageAction = [UIAlertAction actionWithTitle:@"Choose image from Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self showImagePicker];
+        [self showImagePicker:button];
     }];
     
-    UIAlertAction *geolocationAction = [UIAlertAction actionWithTitle:@"Send your geolocation" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+    UIAlertAction *geolocationAction = [UIAlertAction actionWithTitle:@"Check-In" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self sendGeolocation];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
@@ -121,7 +131,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)showImagePicker {
+- (void)showImagePicker:(UIButton *)button {
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -131,8 +141,22 @@
     
     UIPopoverPresentationController *presentationController = imagePickerController.popoverPresentationController;
     presentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    presentationController.sourceView = button;
     
     [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+- (void)sendGeolocation {
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager requestLocation];
+    [self setOptionLoading:YES];
+}
+
+- (void)setOptionLoading:(BOOL)isLoading {
+    self.optionsButton.hidden = isLoading;
+    self.activityIndicator.hidden = !isLoading;
+    isLoading ? [self.activityIndicator startAnimating] : [self.activityIndicator stopAnimating];
 }
 
 - (IBAction)sendPressed:(id)sender {
@@ -157,19 +181,31 @@
 #pragma mark - Image Picker Controller Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *image = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    if ([(NSString *)[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {
+        UIImage *image = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        [self.dialogHolder sendImageMessage:image];
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+#pragma mark - Location Controller Delegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    [self setOptionLoading:NO];
     
-    [self.dialogHolder sendImageMessage:image];
+    NSLog(@"%@", locations);
+    CLLocation *locataion = [locations firstObject];
+    [self.dialogHolder sendGeolocationMessage:locataion];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    [self setOptionLoading:NO];
+    
+    NSLog(@"%@", error);
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Couldn't check-in" message:[NSString stringWithFormat:@"Error appeared: %@", error] preferredStyle:UIAlertControllerStyleAlert];
+    [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
 
 @end

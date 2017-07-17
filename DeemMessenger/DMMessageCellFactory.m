@@ -58,18 +58,17 @@
         }
             
         case kMessageTypeImage: {
-            return 100;
+            return 150;
             break;
         }
             
         case kMessageTypeGeolocation: {
-            return 50;
+            return 300;
             break;
         }
             
         default: {
             return 50;
-//            NSLog(@"Unknown message cell type!");
             break;
         }
     }

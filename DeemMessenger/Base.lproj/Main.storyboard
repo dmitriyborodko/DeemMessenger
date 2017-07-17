@@ -46,11 +46,11 @@
                                         <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fg2-OF-6Q4" id="h2S-oD-Ynz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CMG-he-IKT">
-                                                    <rect key="frame" x="15" y="0.0" width="384" height="43.666666666666664"/>
+                                                    <rect key="frame" x="15" y="0.0" width="384" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -96,6 +96,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="activityIndicator" destination="Heq-pv-hQb" id="ti1-v8-gvH"/>
+                        <outlet property="optionsButton" destination="oww-oj-K16" id="kjI-nR-Xft"/>
                         <outlet property="textInput" destination="RJ6-Np-eCp" id="Y4F-4c-A1I"/>
                         <outlet property="textInputView" destination="Apq-bp-JA5" id="vUH-Rn-a7O"/>
                     </connections>
@@ -131,6 +133,9 @@
                                 <action selector="sendPressed:" destination="dBl-Zf-yLt" eventType="touchUpInside" id="XVJ-vr-6Rc"/>
                             </connections>
                         </button>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Heq-pv-hQb">
+                            <rect key="frame" x="20" y="20" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.95294117649999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -142,32 +147,16 @@
                         <constraint firstItem="diV-Bo-as5" firstAttribute="centerY" secondItem="Apq-bp-JA5" secondAttribute="centerY" id="NDB-g1-1xm"/>
                         <constraint firstItem="oww-oj-K16" firstAttribute="leading" secondItem="Apq-bp-JA5" secondAttribute="leading" constant="8" id="OCd-cZ-6Sb"/>
                         <constraint firstItem="RJ6-Np-eCp" firstAttribute="centerY" secondItem="Apq-bp-JA5" secondAttribute="centerY" id="edY-0N-RiX"/>
+                        <constraint firstItem="Heq-pv-hQb" firstAttribute="centerX" secondItem="oww-oj-K16" secondAttribute="centerX" id="psH-en-2gG"/>
                         <constraint firstItem="RJ6-Np-eCp" firstAttribute="top" secondItem="oww-oj-K16" secondAttribute="top" id="ury-cC-vEM"/>
                         <constraint firstItem="RJ6-Np-eCp" firstAttribute="leading" secondItem="oww-oj-K16" secondAttribute="trailing" constant="8" id="vnX-tQ-opG"/>
+                        <constraint firstItem="Heq-pv-hQb" firstAttribute="centerY" secondItem="oww-oj-K16" secondAttribute="centerY" id="wa7-5t-eH4"/>
                         <constraint firstAttribute="trailing" secondItem="diV-Bo-as5" secondAttribute="trailing" constant="8" id="x4s-tQ-jLi"/>
                         <constraint firstItem="diV-Bo-as5" firstAttribute="top" secondItem="RJ6-Np-eCp" secondAttribute="top" id="z4P-0B-zQc"/>
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1140.5797101449277" y="124.72826086956523"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="STC-K2-4Y0">
-            <objects>
-                <viewController id="TJN-U9-zn3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SC9-jL-YFs"/>
-                        <viewControllerLayoutGuide type="bottom" id="nsh-z4-PHD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qN7-nn-vjQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i3w-8k-0wY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1974" y="125"/>
+            <point key="canvasLocation" x="1323" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EI3-Y8-vwt">

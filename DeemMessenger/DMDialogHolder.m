@@ -69,7 +69,6 @@
             break;
         }
             
-            
         default:
             break;
     }
@@ -78,18 +77,19 @@
 #pragma mark - Actions
 
 - (void)sendTextMessage:(NSString *)text {
-    
     if (!text.length) {
         return;
     }
     
-    DMMessage *message = [DMMessage createWithText:text sender:[DMUser active]];
-    
-    [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
-        if (success) {
-            [self.delegate messageSent];
-        }
-    }];
+    [DMMessage createWithText:text
+                       sender:[DMUser active]
+            compretionHandler:^(DMMessage *message) {
+                [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
+                    if (success) {
+                        [self.delegate messageSent];
+                    }
+                }];
+            }];
 }
 
 - (void)sendImageMessage:(UIImage *)image {
@@ -97,16 +97,31 @@
         return;
     }
     
-    DMMessage *message = [DMMessage createWithImage:image sender:[DMUser active]];
-    
-    [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
-        if (success) {
-            [self.delegate messageSent];
-        }
-    }];
+    [DMMessage createWithImage:image
+                        sender:[DMUser active]
+             compretionHandler:^(DMMessage *message) {
+                 [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
+                     if (success) {
+                         [self.delegate messageSent];
+                     }
+                 }];
+             }];
 }
 
-
-
+- (void)sendGeolocationMessage:(CLLocation *)location {
+    if (!location) {
+        return;
+    }
+    
+    [DMMessage createWithCoordinate:location.coordinate
+                             sender:[DMUser active]
+                  compretionHandler:^(DMMessage *message) {
+                      [[DMNetworking sharedInstance] sendMessage:[message map] completionHandler:^(BOOL success) {
+                          if (success) {
+                              [self.delegate messageSent];
+                          }
+                      }];
+                  }];
+}
 
 @end

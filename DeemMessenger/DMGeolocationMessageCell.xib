@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,22 +20,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FsK-HY-W6G">
-                        <rect key="frame" x="16" y="94" width="35" height="21"/>
-                        <string key="text" base64-UTF8="YES">
-EEdFTw
-</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Rh-OE-eaT">
+                        <rect key="frame" x="16" y="8" width="194" height="194"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="6Rh-OE-eaT" secondAttribute="height" multiplier="1:1" id="dac-lc-A2e"/>
+                        </constraints>
+                    </mapView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="FsK-HY-W6G" firstAttribute="leading" secondItem="5MS-fm-UU9" secondAttribute="leadingMargin" constant="8" id="CAb-mC-Vzu"/>
-                    <constraint firstItem="FsK-HY-W6G" firstAttribute="centerY" secondItem="5MS-fm-UU9" secondAttribute="centerY" id="kji-s4-gyj"/>
+                    <constraint firstItem="6Rh-OE-eaT" firstAttribute="top" secondItem="5MS-fm-UU9" secondAttribute="topMargin" id="GOb-HL-Lh4"/>
+                    <constraint firstItem="6Rh-OE-eaT" firstAttribute="leading" secondItem="5MS-fm-UU9" secondAttribute="leadingMargin" constant="8" id="gXB-cy-9CA"/>
+                    <constraint firstItem="6Rh-OE-eaT" firstAttribute="bottom" secondItem="5MS-fm-UU9" secondAttribute="bottomMargin" id="iuR-7M-Lxg"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-208" y="84"/>
+            <connections>
+                <outlet property="leftMargin" destination="gXB-cy-9CA" id="R8H-f8-zXq"/>
+                <outlet property="mapView" destination="6Rh-OE-eaT" id="A8L-dJ-tJ8"/>
+            </connections>
+            <point key="canvasLocation" x="-208.5" y="84"/>
         </tableViewCell>
     </objects>
 </document>

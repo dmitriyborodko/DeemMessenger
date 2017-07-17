@@ -20,19 +20,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEXT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uow-De-xC3">
-                        <rect key="frame" x="24" y="11.5" width="327" height="21"/>
+                        <rect key="frame" x="24" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="Uow-De-xC3" secondAttribute="trailing" constant="16" id="36m-xQ-XdQ"/>
                     <constraint firstItem="Uow-De-xC3" firstAttribute="centerY" secondItem="JHw-Me-eKb" secondAttribute="centerY" id="JAN-ir-3Tb"/>
                     <constraint firstItem="Uow-De-xC3" firstAttribute="leading" secondItem="JHw-Me-eKb" secondAttribute="leadingMargin" constant="16" id="W7q-cu-EZ9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="activeObject" destination="Uow-De-xC3" id="8cQ-p1-AVU"/>
+                <outlet property="leftMargin" destination="W7q-cu-EZ9" id="PEq-wP-mna"/>
                 <outlet property="textMessage" destination="Uow-De-xC3" id="7p8-0o-tDh"/>
             </connections>
             <point key="canvasLocation" x="171.5" y="-121"/>

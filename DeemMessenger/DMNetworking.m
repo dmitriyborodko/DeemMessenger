@@ -54,14 +54,13 @@
 
 - (void)getDecepticonMessage:(NSDictionary *)dictionary {
     
-    DMMessage *message = [DMMessage createFromWithEncodedData:[dictionary objectForKey:@"body"]
-                                                         type:[[dictionary objectForKey:@"type"] intValue]
-                                                     dateSent:[NSDate date]
-                                                    messageId:[DMMessage generateNewMessageId]
-                                                     senderId:[DMDecepticon user].userId];
-    
-    NSLog(@"Got from space: %@", message);
-    
+    [DMMessage createFromWithEncodedData:[dictionary objectForKey:@"body"]
+                                    type:[[dictionary objectForKey:@"type"] intValue]
+                                dateSent:[NSDate date]
+                                senderId:[DMDecepticon user].userId
+                       compretionHandler:^(DMMessage *message) {
+                           NSLog(@"Got from space: %@", message);
+                       }];
 }
 
 @end

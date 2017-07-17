@@ -14,5 +14,6 @@
 
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName;
 + (NSString *)pathForImageWithName:(NSString *)imageName;
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

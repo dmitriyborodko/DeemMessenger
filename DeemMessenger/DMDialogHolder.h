@@ -11,6 +11,7 @@
 #import "DMMessage+CoreDataClass.h"
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol DMDialogHolderDelegate <NSObject>
 
@@ -32,6 +33,6 @@
 
 - (void)sendTextMessage:(NSString *)text;
 - (void)sendImageMessage:(UIImage *)image;
-- (void)sendGeolocationMessage;
+- (void)sendGeolocationMessage:(CLLocation *)location;
 
 @end

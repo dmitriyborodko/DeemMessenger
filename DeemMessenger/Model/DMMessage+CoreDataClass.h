@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
 typedef enum : int16_t {
@@ -27,21 +26,30 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 
 #import "DMMessage+CoreDataProperties.h"
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface DMMessage ()
 
 @property (nonatomic) DMMessageType type;
 
-+ (DMMessage *)createFromWithEncodedData:(NSData *)body
-                                    type:(DMMessageType)type
-                                dateSent:(NSDate *)dateSent
-                               messageId:(int16_t)messageId
-                                senderId:(int16_t)senderId;
++ (void)createFromWithEncodedData:(NSData *)body
+                             type:(DMMessageType)type
+                         dateSent:(NSDate *)dateSent
+                         senderId:(int16_t)senderId
+                compretionHandler:(void(^)(DMMessage *message))completionHandler;
 
-+ (DMMessage *)createWithText:(NSString *)string sender:(DMUser *)sender;
-+ (DMMessage *)createWithImage:(UIImage *)image sender:(DMUser *)sender;
++ (void)createWithText:(NSString *)string
+                sender:(DMUser *)sender
+     compretionHandler:(void(^)(DMMessage *message))completionHandler;
 
-+ (int64_t)generateNewMessageId;
++ (void)createWithImage:(UIImage *)image
+                 sender:(DMUser *)sender
+      compretionHandler:(void(^)(DMMessage *message))completionHandler;
+
++ (void)createWithCoordinate:(CLLocationCoordinate2D)coordinate
+                      sender:(DMUser *)sender
+           compretionHandler:(void(^)(DMMessage *message))completionHandler;
 
 - (NSDictionary *)map;
 

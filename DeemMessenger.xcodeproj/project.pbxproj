@@ -25,6 +25,7 @@
 		FF47DAB11F149C0D00FFCB5F /* DMUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAB01F149C0D00FFCB5F /* DMUtility.m */; };
 		FF47DAB41F149C7600FFCB5F /* NSDictionary+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */; };
 		FF47DAB61F14B46A00FFCB5F /* ActiveUser.json in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */; };
+		FFA036251F1CC24A00EEBD1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */; };
 		FFDD7F981F0CDD0800184A7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F971F0CDD0800184A7B /* main.m */; };
 		FFDD7F9B1F0CDD0800184A7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F9A1F0CDD0800184A7B /* AppDelegate.m */; };
 		FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		FF47DAB21F149C7600FFCB5F /* NSDictionary+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Validation.h"; sourceTree = "<group>"; };
 		FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Validation.m"; sourceTree = "<group>"; };
 		FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActiveUser.json; sourceTree = "<group>"; };
+		FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeemMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDD7F971F0CDD0800184A7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FFDD7F991F0CDD0800184A7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA036251F1CC24A00EEBD1B /* CoreLocation.framework in Frameworks */,
 				03ECC106273AFF1AE5DBBD0D /* libPods-DeemMessenger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +175,7 @@
 		9AE188CAB8529E809394C3C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */,
 				34D4AD7EF247279C97E2C780 /* libPods-DeemMessenger.a */,
 				A42A2E7C40B95F0AB6DD9515 /* libPods-DeemMessengerTests.a */,
 				12809BCC9EF9F77D92AC8DDB /* libPods-DeemMessengerUITests.a */,
