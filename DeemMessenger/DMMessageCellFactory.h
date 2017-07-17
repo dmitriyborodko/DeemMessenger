@@ -15,6 +15,6 @@
 
 + (NSArray *)cellClasses;
 + (DMMessageCell *)dequeueCellWithMessage:(DMMessage *)message forTableView:(UITableView *)tableView;
-+ (CGSize)estimatedContentSizeOfMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth;
++ (CGFloat)estimatedHeightForCellWithMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth;
 
 @end

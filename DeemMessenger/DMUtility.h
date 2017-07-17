@@ -13,5 +13,6 @@
 @interface DMUtility : NSObject
 
 + (NSDictionary *)dictionaryFromJSONFileNamed:(NSString *)fileName;
++ (NSString *)pathForImageWithName:(NSString *)imageName;
 
 @end

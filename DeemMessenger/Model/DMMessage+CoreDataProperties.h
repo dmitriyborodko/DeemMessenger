@@ -2,7 +2,7 @@
 //  DMMessage+CoreDataProperties.h
 //  DeemMessenger
 //
-//  Created by ALS_Deem on 10/07/2017.
+//  Created by Dmitriy Borodko on 17/07/2017.
 //  Copyright © 2017 wrk. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<DMMessage *> *)fetchRequest;
 
-@property (nullable, nonatomic, retain) NSData *body;
+@property (nullable, nonatomic, copy) NSString *body;
 @property (nullable, nonatomic, copy) NSDate *dateSent;
 @property (nonatomic) int64_t messageId;
 @property (nonatomic) int16_t type;

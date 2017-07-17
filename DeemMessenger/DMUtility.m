@@ -29,4 +29,10 @@
     }
 }
 
++ (NSString *)pathForImageWithName:(NSString *)imageName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *docs = [paths objectAtIndex:0];
+    return  [docs stringByAppendingFormat:@"/%@", imageName];
+}
+
 @end

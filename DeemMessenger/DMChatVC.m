@@ -60,6 +60,11 @@
     return self.dialogHolder.fetchedResultsController.fetchedObjects.count;
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    DMMessage *message = self.dialogHolder.fetchedResultsController.fetchedObjects[indexPath.row];
+//    return [DMMessageCellFactory estimatedHeightForCellWithMessage:message forScreenWidth:self.view.frame.size.width];
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return self.textInputView.frame.size.height;

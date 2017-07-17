@@ -32,14 +32,16 @@ NS_ASSUME_NONNULL_END
 
 @property (nonatomic) DMMessageType type;
 
-+ (DMMessage *)createWithType:(DMMessageType)type
-                         body:(NSData *)body
-                     dateSent:(NSDate *)dateSent
-                    messageId:(int16_t)messageId
-                     senderId:(int16_t)senderId;
++ (DMMessage *)createFromWithEncodedData:(NSData *)body
+                                    type:(DMMessageType)type
+                                dateSent:(NSDate *)dateSent
+                               messageId:(int16_t)messageId
+                                senderId:(int16_t)senderId;
 
 + (DMMessage *)createWithText:(NSString *)string sender:(DMUser *)sender;
 + (DMMessage *)createWithImage:(UIImage *)image sender:(DMUser *)sender;
+
++ (int64_t)generateNewMessageId;
 
 - (NSDictionary *)map;
 

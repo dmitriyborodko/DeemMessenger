@@ -50,25 +50,25 @@
     return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(cellClass)];
 }
 
-+ (CGSize)estimatedContentSizeOfMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth {
++ (CGFloat)estimatedHeightForCellWithMessage:(DMMessage *)message forScreenWidth:(CGFloat)screenWidth {
     switch (message.type) {
         case kMessageTypeText: {
-            return CGSizeMake(screenWidth, 50);
+            return 50;
             break;
         }
             
         case kMessageTypeImage: {
-            return CGSizeMake(screenWidth, 50);
+            return 100;
             break;
         }
             
         case kMessageTypeGeolocation: {
-            return CGSizeMake(screenWidth, 50);
+            return 50;
             break;
         }
             
         default: {
-            return CGSizeMake(screenWidth, 50);
+            return 50;
 //            NSLog(@"Unknown message cell type!");
             break;
         }
