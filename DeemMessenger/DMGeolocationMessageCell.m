@@ -44,7 +44,7 @@
             
             dispatch_async(dispatch_get_main_queue(), ^(void){
                 _mapView.hidden = NO;
-                [_mapView setRegion:region animated:YES];
+                [_mapView setRegion:region animated:NO];
                 [_mapView addAnnotation:annotation];
             });
         }

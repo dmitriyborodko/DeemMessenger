@@ -93,6 +93,8 @@
             user.isActive = [object boolValue];
         }];
         
+        NSLog(@"%lu", user.messages.count);
+        
         [[AppDelegate managedObjectContext] save:&error];
         
     }];

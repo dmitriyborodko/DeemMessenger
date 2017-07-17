@@ -55,7 +55,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self viewDidLoad];
 }
 
 #pragma mark - Table View Data Source
@@ -158,6 +159,7 @@
 }
 
 - (IBAction)sendPressed:(id)sender {
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     [self.dialogHolder sendTextMessage:self.textInput.text];
 }
 
