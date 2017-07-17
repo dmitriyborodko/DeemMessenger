@@ -1,0 +1,988 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03ECC106273AFF1AE5DBBD0D /* libPods-DeemMessenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D4AD7EF247279C97E2C780 /* libPods-DeemMessenger.a */; };
+		4EC56D9705581936E2E9BFFF /* libPods-DeemMessengerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12809BCC9EF9F77D92AC8DDB /* libPods-DeemMessengerUITests.a */; };
+		5FD7AAC31EFD252FC372D8C6 /* libPods-DeemMessengerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A42A2E7C40B95F0AB6DD9515 /* libPods-DeemMessengerTests.a */; };
+		FF47DA7E1F1380C100FFCB5F /* DMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */; };
+		FF47DA941F13936C00FFCB5F /* DMTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */; };
+		FF47DA951F13936C00FFCB5F /* DMTextMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */; };
+		FF47DA991F13938C00FFCB5F /* DMImageMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */; };
+		FF47DA9A1F13938C00FFCB5F /* DMImageMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */; };
+		FF47DA9E1F1393A400FFCB5F /* DMGeolocationMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */; };
+		FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */; };
+		FF47DAA31F1393D400FFCB5F /* DMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */; };
+		FF47DAA41F1393D400FFCB5F /* DMMessageCellActive.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */; };
+		FF47DAA71F139CDD00FFCB5F /* DMMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */; };
+		FF47DAAA1F14889A00FFCB5F /* DMUserListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAA91F14889A00FFCB5F /* DMUserListVC.m */; };
+		FF47DAAD1F14891D00FFCB5F /* DMUserListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAAC1F14891D00FFCB5F /* DMUserListTableView.m */; };
+		FF47DAB11F149C0D00FFCB5F /* DMUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAB01F149C0D00FFCB5F /* DMUtility.m */; };
+		FF47DAB41F149C7600FFCB5F /* NSDictionary+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */; };
+		FF47DAB61F14B46A00FFCB5F /* ActiveUser.json in Resources */ = {isa = PBXBuildFile; fileRef = FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */; };
+		FFA036251F1CC24A00EEBD1B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */; };
+		FFA036271F1CF0D400EEBD1B /* DMMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */; };
+		FFA036291F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */; };
+		FFA0362B1F1CF10000EEBD1B /* DMImageMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */; };
+		FFA0362D1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */; };
+		FFDD7F981F0CDD0800184A7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F971F0CDD0800184A7B /* main.m */; };
+		FFDD7F9B1F0CDD0800184A7B /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */; };
+		FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */; };
+		FFDD7FA41F0CDD0800184A7B /* DeemMessenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */; };
+		FFDD7FA61F0CDD0800184A7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */; };
+		FFDD7FA91F0CDD0800184A7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFDD7FA71F0CDD0800184A7B /* LaunchScreen.storyboard */; };
+		FFDD7FB41F0CDD0800184A7B /* DeemMessengerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FB31F0CDD0800184A7B /* DeemMessengerTests.m */; };
+		FFDD7FBF1F0CDD0800184A7B /* DeemMessengerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FBE1F0CDD0800184A7B /* DeemMessengerUITests.m */; };
+		FFDD7FDC1F0F598E00184A7B /* DMChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FDB1F0F598E00184A7B /* DMChatVC.m */; };
+		FFDD7FFF1F0F61B000184A7B /* DMDialogHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */; };
+		FFDD801A1F0F6B7D00184A7B /* DecepticonUser.json in Resources */ = {isa = PBXBuildFile; fileRef = FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */; };
+		FFDD801D1F0F6C2D00184A7B /* DMDecepticon.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD801C1F0F6C2D00184A7B /* DMDecepticon.m */; };
+		FFE9C73A1F14C60A002C9EC7 /* DMMessage+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9C7331F14C60A002C9EC7 /* DMMessage+CoreDataClass.m */; };
+		FFE9C73B1F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9C7351F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m */; };
+		FFE9C73C1F14C60A002C9EC7 /* DMUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9C7371F14C60A002C9EC7 /* DMUser+CoreDataClass.m */; };
+		FFE9C73D1F14C60A002C9EC7 /* DMUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9C7391F14C60A002C9EC7 /* DMUser+CoreDataProperties.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFDD7FB01F0CDD0800184A7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDD7F8B1F0CDD0800184A7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDD7F921F0CDD0800184A7B;
+			remoteInfo = DeemMessenger;
+		};
+		FFDD7FBB1F0CDD0800184A7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFDD7F8B1F0CDD0800184A7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFDD7F921F0CDD0800184A7B;
+			remoteInfo = DeemMessenger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12809BCC9EF9F77D92AC8DDB /* libPods-DeemMessengerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeemMessengerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B163A1748AF93BA3A7F902E /* Pods-DeemMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessenger/Pods-DeemMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		34D4AD7EF247279C97E2C780 /* libPods-DeemMessenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeemMessenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		413200DA192F24B5DBF18A02 /* Pods-DeemMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessenger/Pods-DeemMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		4F8FD94D856ACF5E9E8F7A74 /* Pods-DeemMessengerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessengerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessengerUITests/Pods-DeemMessengerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A42A2E7C40B95F0AB6DD9515 /* libPods-DeemMessengerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeemMessengerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE506B45DA79DCCAFB443FF7 /* Pods-DeemMessengerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessengerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessengerTests/Pods-DeemMessengerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7FABE2F3172EC816F28FF07 /* Pods-DeemMessengerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessengerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessengerTests/Pods-DeemMessengerTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC6054947A962A0659BE4819 /* Pods-DeemMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeemMessengerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeemMessengerUITests/Pods-DeemMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FF47DA7C1F1380C100FFCB5F /* DMNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMNetworking.h; sourceTree = "<group>"; };
+		FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMNetworking.m; sourceTree = "<group>"; };
+		FF47DA911F13936C00FFCB5F /* DMTextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTextMessageCell.h; sourceTree = "<group>"; };
+		FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTextMessageCell.m; sourceTree = "<group>"; };
+		FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMTextMessageCellActive.xib; sourceTree = "<group>"; };
+		FF47DA961F13938C00FFCB5F /* DMImageMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMImageMessageCell.h; sourceTree = "<group>"; };
+		FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMImageMessageCell.m; sourceTree = "<group>"; };
+		FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMImageMessageCellActive.xib; sourceTree = "<group>"; };
+		FF47DA9B1F1393A400FFCB5F /* DMGeolocationMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGeolocationMessageCell.h; sourceTree = "<group>"; };
+		FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGeolocationMessageCell.m; sourceTree = "<group>"; };
+		FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCellActive.xib; sourceTree = "<group>"; };
+		FF47DAA01F1393D400FFCB5F /* DMMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMessageCell.h; sourceTree = "<group>"; };
+		FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMessageCell.m; sourceTree = "<group>"; };
+		FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMMessageCellActive.xib; sourceTree = "<group>"; };
+		FF47DAA51F139CDD00FFCB5F /* DMMessageCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMMessageCellFactory.h; sourceTree = "<group>"; };
+		FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMMessageCellFactory.m; sourceTree = "<group>"; };
+		FF47DAA81F14889A00FFCB5F /* DMUserListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserListVC.h; sourceTree = "<group>"; };
+		FF47DAA91F14889A00FFCB5F /* DMUserListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserListVC.m; sourceTree = "<group>"; };
+		FF47DAAB1F14891D00FFCB5F /* DMUserListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUserListTableView.h; sourceTree = "<group>"; };
+		FF47DAAC1F14891D00FFCB5F /* DMUserListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUserListTableView.m; sourceTree = "<group>"; };
+		FF47DAAF1F149C0D00FFCB5F /* DMUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMUtility.h; sourceTree = "<group>"; };
+		FF47DAB01F149C0D00FFCB5F /* DMUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMUtility.m; sourceTree = "<group>"; };
+		FF47DAB21F149C7600FFCB5F /* NSDictionary+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Validation.h"; sourceTree = "<group>"; };
+		FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Validation.m"; sourceTree = "<group>"; };
+		FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActiveUser.json; sourceTree = "<group>"; };
+		FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMTextMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMImageMessageCellSender.xib; sourceTree = "<group>"; };
+		FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMGeolocationMessageCellSender.xib; sourceTree = "<group>"; };
+		FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeemMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDD7F971F0CDD0800184A7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFDD7F991F0CDD0800184A7B /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
+		FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
+		FFDD7FA01F0CDD0800184A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FFDD7FA31F0CDD0800184A7B /* DeemMessenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeemMessenger.xcdatamodel; sourceTree = "<group>"; };
+		FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFDD7FA81F0CDD0800184A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FFDD7FAA1F0CDD0800184A7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDD7FAF1F0CDD0800184A7B /* DeemMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeemMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDD7FB31F0CDD0800184A7B /* DeemMessengerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeemMessengerTests.m; sourceTree = "<group>"; };
+		FFDD7FB51F0CDD0800184A7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDD7FBA1F0CDD0800184A7B /* DeemMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeemMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDD7FBE1F0CDD0800184A7B /* DeemMessengerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeemMessengerUITests.m; sourceTree = "<group>"; };
+		FFDD7FC01F0CDD0800184A7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFDD7FD11F0E01B400184A7B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FFDD7FDA1F0F598E00184A7B /* DMChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMChatVC.h; sourceTree = "<group>"; };
+		FFDD7FDB1F0F598E00184A7B /* DMChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMChatVC.m; sourceTree = "<group>"; };
+		FFDD7FFD1F0F61B000184A7B /* DMDialogHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDialogHolder.h; sourceTree = "<group>"; };
+		FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDialogHolder.m; sourceTree = "<group>"; };
+		FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DecepticonUser.json; sourceTree = "<group>"; };
+		FFDD801B1F0F6C2D00184A7B /* DMDecepticon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDecepticon.h; sourceTree = "<group>"; };
+		FFDD801C1F0F6C2D00184A7B /* DMDecepticon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDecepticon.m; sourceTree = "<group>"; };
+		FFE9C7321F14C60A002C9EC7 /* DMMessage+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DMMessage+CoreDataClass.h"; path = "Model/DMMessage+CoreDataClass.h"; sourceTree = "<group>"; };
+		FFE9C7331F14C60A002C9EC7 /* DMMessage+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DMMessage+CoreDataClass.m"; path = "Model/DMMessage+CoreDataClass.m"; sourceTree = "<group>"; };
+		FFE9C7341F14C60A002C9EC7 /* DMMessage+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DMMessage+CoreDataProperties.h"; path = "Model/DMMessage+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FFE9C7351F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DMMessage+CoreDataProperties.m"; path = "Model/DMMessage+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FFE9C7361F14C60A002C9EC7 /* DMUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DMUser+CoreDataClass.h"; path = "Model/DMUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		FFE9C7371F14C60A002C9EC7 /* DMUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DMUser+CoreDataClass.m"; path = "Model/DMUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		FFE9C7381F14C60A002C9EC7 /* DMUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DMUser+CoreDataProperties.h"; path = "Model/DMUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FFE9C7391F14C60A002C9EC7 /* DMUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DMUser+CoreDataProperties.m"; path = "Model/DMUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFDD7F901F0CDD0800184A7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA036251F1CC24A00EEBD1B /* CoreLocation.framework in Frameworks */,
+				03ECC106273AFF1AE5DBBD0D /* libPods-DeemMessenger.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FAC1F0CDD0800184A7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD7AAC31EFD252FC372D8C6 /* libPods-DeemMessengerTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FB71F0CDD0800184A7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC56D9705581936E2E9BFFF /* libPods-DeemMessengerUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		666124F94725F9E10E131EE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				413200DA192F24B5DBF18A02 /* Pods-DeemMessenger.debug.xcconfig */,
+				1B163A1748AF93BA3A7F902E /* Pods-DeemMessenger.release.xcconfig */,
+				AE506B45DA79DCCAFB443FF7 /* Pods-DeemMessengerTests.debug.xcconfig */,
+				E7FABE2F3172EC816F28FF07 /* Pods-DeemMessengerTests.release.xcconfig */,
+				4F8FD94D856ACF5E9E8F7A74 /* Pods-DeemMessengerUITests.debug.xcconfig */,
+				EC6054947A962A0659BE4819 /* Pods-DeemMessengerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		95C8FFBC1F1D2C8D00B22971 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FFD1F0F61B000184A7B /* DMDialogHolder.h */,
+				FFDD7FFE1F0F61B000184A7B /* DMDialogHolder.m */,
+				FF47DA7C1F1380C100FFCB5F /* DMNetworking.h */,
+				FF47DA7D1F1380C100FFCB5F /* DMNetworking.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		9AE188CAB8529E809394C3C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFA036241F1CC24A00EEBD1B /* CoreLocation.framework */,
+				34D4AD7EF247279C97E2C780 /* libPods-DeemMessenger.a */,
+				A42A2E7C40B95F0AB6DD9515 /* libPods-DeemMessengerTests.a */,
+				12809BCC9EF9F77D92AC8DDB /* libPods-DeemMessengerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF47DAAE1F14892500FFCB5F /* User List */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DAAB1F14891D00FFCB5F /* DMUserListTableView.h */,
+				FF47DAAC1F14891D00FFCB5F /* DMUserListTableView.m */,
+			);
+			name = "User List";
+			sourceTree = "<group>";
+		};
+		FFDD7F8A1F0CDD0800184A7B = {
+			isa = PBXGroup;
+			children = (
+				FFDD7F951F0CDD0800184A7B /* DeemMessenger */,
+				FFDD7FB21F0CDD0800184A7B /* DeemMessengerTests */,
+				FFDD7FBD1F0CDD0800184A7B /* DeemMessengerUITests */,
+				FFDD7F941F0CDD0800184A7B /* Products */,
+				666124F94725F9E10E131EE3 /* Pods */,
+				9AE188CAB8529E809394C3C9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FFDD7F941F0CDD0800184A7B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */,
+				FFDD7FAF1F0CDD0800184A7B /* DeemMessengerTests.xctest */,
+				FFDD7FBA1F0CDD0800184A7B /* DeemMessengerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFDD7F951F0CDD0800184A7B /* DeemMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */,
+				FFDD7F991F0CDD0800184A7B /* DMAppDelegate.h */,
+				FFDD7F9A1F0CDD0800184A7B /* DMAppDelegate.m */,
+				95C8FFBC1F1D2C8D00B22971 /* Managers */,
+				FFDD7FCE1F0CF9B200184A7B /* View Controllers */,
+				FFDD7FCF1F0CF9BB00184A7B /* Views */,
+				FFDD7FCD1F0CF99800184A7B /* Utility */,
+				FFDD7FD01F0CF9CC00184A7B /* Model */,
+				FFDD7F961F0CDD0800184A7B /* Supporting Files */,
+			);
+			path = DeemMessenger;
+			sourceTree = "<group>";
+		};
+		FFDD7F961F0CDD0800184A7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FA51F0CDD0800184A7B /* Assets.xcassets */,
+				FFDD7FA71F0CDD0800184A7B /* LaunchScreen.storyboard */,
+				FFDD7FAA1F0CDD0800184A7B /* Info.plist */,
+				FFDD7F971F0CDD0800184A7B /* main.m */,
+				FFDD7FD11F0E01B400184A7B /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFDD7FB21F0CDD0800184A7B /* DeemMessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FB31F0CDD0800184A7B /* DeemMessengerTests.m */,
+				FFDD7FB51F0CDD0800184A7B /* Info.plist */,
+			);
+			path = DeemMessengerTests;
+			sourceTree = "<group>";
+		};
+		FFDD7FBD1F0CDD0800184A7B /* DeemMessengerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FBE1F0CDD0800184A7B /* DeemMessengerUITests.m */,
+				FFDD7FC01F0CDD0800184A7B /* Info.plist */,
+			);
+			path = DeemMessengerUITests;
+			sourceTree = "<group>";
+		};
+		FFDD7FCD1F0CF99800184A7B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD801B1F0F6C2D00184A7B /* DMDecepticon.h */,
+				FFDD801C1F0F6C2D00184A7B /* DMDecepticon.m */,
+				FF47DAAF1F149C0D00FFCB5F /* DMUtility.h */,
+				FF47DAB01F149C0D00FFCB5F /* DMUtility.m */,
+				FF47DAB21F149C7600FFCB5F /* NSDictionary+Validation.h */,
+				FF47DAB31F149C7600FFCB5F /* NSDictionary+Validation.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		FFDD7FCE1F0CF9B200184A7B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DAA81F14889A00FFCB5F /* DMUserListVC.h */,
+				FF47DAA91F14889A00FFCB5F /* DMUserListVC.m */,
+				FFDD7FDA1F0F598E00184A7B /* DMChatVC.h */,
+				FFDD7FDB1F0F598E00184A7B /* DMChatVC.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FFDD7FCF1F0CF9BB00184A7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FDD1F0F59ED00184A7B /* Chat */,
+				FF47DAAE1F14892500FFCB5F /* User List */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FFDD7FD01F0CF9CC00184A7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */,
+				FFE9C7321F14C60A002C9EC7 /* DMMessage+CoreDataClass.h */,
+				FFE9C7331F14C60A002C9EC7 /* DMMessage+CoreDataClass.m */,
+				FFE9C7341F14C60A002C9EC7 /* DMMessage+CoreDataProperties.h */,
+				FFE9C7351F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m */,
+				FFE9C7361F14C60A002C9EC7 /* DMUser+CoreDataClass.h */,
+				FFE9C7371F14C60A002C9EC7 /* DMUser+CoreDataClass.m */,
+				FFE9C7381F14C60A002C9EC7 /* DMUser+CoreDataProperties.h */,
+				FFE9C7391F14C60A002C9EC7 /* DMUser+CoreDataProperties.m */,
+				FF47DAB51F14B46A00FFCB5F /* ActiveUser.json */,
+				FFDD80191F0F6B7D00184A7B /* DecepticonUser.json */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FFDD7FDD1F0F59ED00184A7B /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD7FEA1F0F5A7E00184A7B /* Message Views */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		FFDD7FEA1F0F5A7E00184A7B /* Message Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DAA51F139CDD00FFCB5F /* DMMessageCellFactory.h */,
+				FF47DAA61F139CDD00FFCB5F /* DMMessageCellFactory.m */,
+				FF47DAA01F1393D400FFCB5F /* DMMessageCell.h */,
+				FF47DAA11F1393D400FFCB5F /* DMMessageCell.m */,
+				FF47DAA21F1393D400FFCB5F /* DMMessageCellActive.xib */,
+				FFA036261F1CF0D400EEBD1B /* DMMessageCellSender.xib */,
+				FFDD7FFA1F0F60C500184A7B /* Text Message */,
+				FFDD7FFB1F0F60CE00184A7B /* Image Message */,
+				FFDD7FFC1F0F60DC00184A7B /* Geolocation Message */,
+			);
+			name = "Message Views";
+			sourceTree = "<group>";
+		};
+		FFDD7FFA1F0F60C500184A7B /* Text Message */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DA911F13936C00FFCB5F /* DMTextMessageCell.h */,
+				FF47DA921F13936C00FFCB5F /* DMTextMessageCell.m */,
+				FF47DA931F13936C00FFCB5F /* DMTextMessageCellActive.xib */,
+				FFA036281F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib */,
+			);
+			name = "Text Message";
+			sourceTree = "<group>";
+		};
+		FFDD7FFB1F0F60CE00184A7B /* Image Message */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DA961F13938C00FFCB5F /* DMImageMessageCell.h */,
+				FF47DA971F13938C00FFCB5F /* DMImageMessageCell.m */,
+				FF47DA981F13938C00FFCB5F /* DMImageMessageCellActive.xib */,
+				FFA0362A1F1CF0FF00EEBD1B /* DMImageMessageCellSender.xib */,
+			);
+			name = "Image Message";
+			sourceTree = "<group>";
+		};
+		FFDD7FFC1F0F60DC00184A7B /* Geolocation Message */ = {
+			isa = PBXGroup;
+			children = (
+				FF47DA9B1F1393A400FFCB5F /* DMGeolocationMessageCell.h */,
+				FF47DA9C1F1393A400FFCB5F /* DMGeolocationMessageCell.m */,
+				FF47DA9D1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib */,
+				FFA0362C1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib */,
+			);
+			name = "Geolocation Message";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFDD7F921F0CDD0800184A7B /* DeemMessenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDD7FC31F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessenger" */;
+			buildPhases = (
+				84F028976E7D405C675B5566 /* [CP] Check Pods Manifest.lock */,
+				FFDD7F8F1F0CDD0800184A7B /* Sources */,
+				FFDD7F901F0CDD0800184A7B /* Frameworks */,
+				FFDD7F911F0CDD0800184A7B /* Resources */,
+				0BC1A28A92A2DED671873385 /* [CP] Embed Pods Frameworks */,
+				3DE5CCDB44B0420A700C7FB1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeemMessenger;
+			productName = DeemMessenger;
+			productReference = FFDD7F931F0CDD0800184A7B /* DeemMessenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFDD7FAE1F0CDD0800184A7B /* DeemMessengerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDD7FC61F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessengerTests" */;
+			buildPhases = (
+				D8FCBB749A941187B0D96527 /* [CP] Check Pods Manifest.lock */,
+				FFDD7FAB1F0CDD0800184A7B /* Sources */,
+				FFDD7FAC1F0CDD0800184A7B /* Frameworks */,
+				FFDD7FAD1F0CDD0800184A7B /* Resources */,
+				E695AB4853B8809CCE7FC8DF /* [CP] Embed Pods Frameworks */,
+				5D889625BA1DAD90C19836B7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDD7FB11F0CDD0800184A7B /* PBXTargetDependency */,
+			);
+			name = DeemMessengerTests;
+			productName = DeemMessengerTests;
+			productReference = FFDD7FAF1F0CDD0800184A7B /* DeemMessengerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFDD7FB91F0CDD0800184A7B /* DeemMessengerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFDD7FC91F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessengerUITests" */;
+			buildPhases = (
+				B7B8824CDCBCEEC392D74C81 /* [CP] Check Pods Manifest.lock */,
+				FFDD7FB61F0CDD0800184A7B /* Sources */,
+				FFDD7FB71F0CDD0800184A7B /* Frameworks */,
+				FFDD7FB81F0CDD0800184A7B /* Resources */,
+				92F1B0449FE982432C86ABF5 /* [CP] Embed Pods Frameworks */,
+				A31DB70CE98D9C0AC61F3EF3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFDD7FBC1F0CDD0800184A7B /* PBXTargetDependency */,
+			);
+			name = DeemMessengerUITests;
+			productName = DeemMessengerUITests;
+			productReference = FFDD7FBA1F0CDD0800184A7B /* DeemMessengerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFDD7F8B1F0CDD0800184A7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = wrk;
+				TargetAttributes = {
+					FFDD7F921F0CDD0800184A7B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 85XZ35DQ9X;
+						ProvisioningStyle = Automatic;
+					};
+					FFDD7FAE1F0CDD0800184A7B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 85XZ35DQ9X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFDD7F921F0CDD0800184A7B;
+					};
+					FFDD7FB91F0CDD0800184A7B = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 85XZ35DQ9X;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FFDD7F921F0CDD0800184A7B;
+					};
+				};
+			};
+			buildConfigurationList = FFDD7F8E1F0CDD0800184A7B /* Build configuration list for PBXProject "DeemMessenger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFDD7F8A1F0CDD0800184A7B;
+			productRefGroup = FFDD7F941F0CDD0800184A7B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFDD7F921F0CDD0800184A7B /* DeemMessenger */,
+				FFDD7FAE1F0CDD0800184A7B /* DeemMessengerTests */,
+				FFDD7FB91F0CDD0800184A7B /* DeemMessengerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFDD7F911F0CDD0800184A7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF47DAA41F1393D400FFCB5F /* DMMessageCellActive.xib in Resources */,
+				FFA036291F1CF0EB00EEBD1B /* DMTextMessageCellSender.xib in Resources */,
+				FF47DAB61F14B46A00FFCB5F /* ActiveUser.json in Resources */,
+				FF47DA9A1F13938C00FFCB5F /* DMImageMessageCellActive.xib in Resources */,
+				FFA036271F1CF0D400EEBD1B /* DMMessageCellSender.xib in Resources */,
+				FF47DA951F13936C00FFCB5F /* DMTextMessageCellActive.xib in Resources */,
+				FFDD7FA91F0CDD0800184A7B /* LaunchScreen.storyboard in Resources */,
+				FFA0362D1F1CF10F00EEBD1B /* DMGeolocationMessageCellSender.xib in Resources */,
+				FFA0362B1F1CF10000EEBD1B /* DMImageMessageCellSender.xib in Resources */,
+				FFDD801A1F0F6B7D00184A7B /* DecepticonUser.json in Resources */,
+				FFDD7FA61F0CDD0800184A7B /* Assets.xcassets in Resources */,
+				FFDD7FA11F0CDD0800184A7B /* Main.storyboard in Resources */,
+				FF47DA9F1F1393A400FFCB5F /* DMGeolocationMessageCellActive.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FAD1F0CDD0800184A7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FB81F0CDD0800184A7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BC1A28A92A2DED671873385 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessenger/Pods-DeemMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DE5CCDB44B0420A700C7FB1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessenger/Pods-DeemMessenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D889625BA1DAD90C19836B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessengerTests/Pods-DeemMessengerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84F028976E7D405C675B5566 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92F1B0449FE982432C86ABF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessengerUITests/Pods-DeemMessengerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A31DB70CE98D9C0AC61F3EF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessengerUITests/Pods-DeemMessengerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7B8824CDCBCEEC392D74C81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8FCBB749A941187B0D96527 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E695AB4853B8809CCE7FC8DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DeemMessengerTests/Pods-DeemMessengerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFDD7F8F1F0CDD0800184A7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF47DA9E1F1393A400FFCB5F /* DMGeolocationMessageCell.m in Sources */,
+				FFE9C73B1F14C60A002C9EC7 /* DMMessage+CoreDataProperties.m in Sources */,
+				FF47DAA31F1393D400FFCB5F /* DMMessageCell.m in Sources */,
+				FF47DAB11F149C0D00FFCB5F /* DMUtility.m in Sources */,
+				FF47DAAD1F14891D00FFCB5F /* DMUserListTableView.m in Sources */,
+				FFDD7F9B1F0CDD0800184A7B /* DMAppDelegate.m in Sources */,
+				FFE9C73A1F14C60A002C9EC7 /* DMMessage+CoreDataClass.m in Sources */,
+				FF47DA7E1F1380C100FFCB5F /* DMNetworking.m in Sources */,
+				FF47DAAA1F14889A00FFCB5F /* DMUserListVC.m in Sources */,
+				FF47DA991F13938C00FFCB5F /* DMImageMessageCell.m in Sources */,
+				FF47DAB41F149C7600FFCB5F /* NSDictionary+Validation.m in Sources */,
+				FFDD7FFF1F0F61B000184A7B /* DMDialogHolder.m in Sources */,
+				FFDD801D1F0F6C2D00184A7B /* DMDecepticon.m in Sources */,
+				FF47DA941F13936C00FFCB5F /* DMTextMessageCell.m in Sources */,
+				FFDD7FA41F0CDD0800184A7B /* DeemMessenger.xcdatamodeld in Sources */,
+				FF47DAA71F139CDD00FFCB5F /* DMMessageCellFactory.m in Sources */,
+				FFE9C73C1F14C60A002C9EC7 /* DMUser+CoreDataClass.m in Sources */,
+				FFDD7F981F0CDD0800184A7B /* main.m in Sources */,
+				FFDD7FDC1F0F598E00184A7B /* DMChatVC.m in Sources */,
+				FFE9C73D1F14C60A002C9EC7 /* DMUser+CoreDataProperties.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FAB1F0CDD0800184A7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDD7FB41F0CDD0800184A7B /* DeemMessengerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFDD7FB61F0CDD0800184A7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFDD7FBF1F0CDD0800184A7B /* DeemMessengerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFDD7FB11F0CDD0800184A7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDD7F921F0CDD0800184A7B /* DeemMessenger */;
+			targetProxy = FFDD7FB01F0CDD0800184A7B /* PBXContainerItemProxy */;
+		};
+		FFDD7FBC1F0CDD0800184A7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFDD7F921F0CDD0800184A7B /* DeemMessenger */;
+			targetProxy = FFDD7FBB1F0CDD0800184A7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFDD7F9F1F0CDD0800184A7B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDD7FA01F0CDD0800184A7B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FFDD7FA71F0CDD0800184A7B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFDD7FA81F0CDD0800184A7B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFDD7FC11F0CDD0800184A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFDD7FC21F0CDD0800184A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFDD7FC41F0CDD0800184A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413200DA192F24B5DBF18A02 /* Pods-DeemMessenger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = DeemMessenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessenger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FFDD7FC51F0CDD0800184A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B163A1748AF93BA3A7F902E /* Pods-DeemMessenger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				ENABLE_BITCODE = YES;
+				INFOPLIST_FILE = DeemMessenger/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessenger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FFDD7FC71F0CDD0800184A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE506B45DA79DCCAFB443FF7 /* Pods-DeemMessengerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				INFOPLIST_FILE = DeemMessengerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeemMessenger.app/DeemMessenger";
+			};
+			name = Debug;
+		};
+		FFDD7FC81F0CDD0800184A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7FABE2F3172EC816F28FF07 /* Pods-DeemMessengerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				INFOPLIST_FILE = DeemMessengerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeemMessenger.app/DeemMessenger";
+			};
+			name = Release;
+		};
+		FFDD7FCA1F0CDD0800184A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F8FD94D856ACF5E9E8F7A74 /* Pods-DeemMessengerUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				INFOPLIST_FILE = DeemMessengerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DeemMessenger;
+			};
+			name = Debug;
+		};
+		FFDD7FCB1F0CDD0800184A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC6054947A962A0659BE4819 /* Pods-DeemMessengerUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 85XZ35DQ9X;
+				INFOPLIST_FILE = DeemMessengerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wrk.DeemMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DeemMessenger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFDD7F8E1F0CDD0800184A7B /* Build configuration list for PBXProject "DeemMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDD7FC11F0CDD0800184A7B /* Debug */,
+				FFDD7FC21F0CDD0800184A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDD7FC31F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDD7FC41F0CDD0800184A7B /* Debug */,
+				FFDD7FC51F0CDD0800184A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDD7FC61F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessengerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDD7FC71F0CDD0800184A7B /* Debug */,
+				FFDD7FC81F0CDD0800184A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFDD7FC91F0CDD0800184A7B /* Build configuration list for PBXNativeTarget "DeemMessengerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFDD7FCA1F0CDD0800184A7B /* Debug */,
+				FFDD7FCB1F0CDD0800184A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FFDD7FA21F0CDD0800184A7B /* DeemMessenger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FFDD7FA31F0CDD0800184A7B /* DeemMessenger.xcdatamodel */,
+			);
+			currentVersion = FFDD7FA31F0CDD0800184A7B /* DeemMessenger.xcdatamodel */;
+			path = DeemMessenger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FFDD7F8B1F0CDD0800184A7B /* Project object */;
+}
