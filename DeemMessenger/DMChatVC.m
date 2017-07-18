@@ -203,8 +203,8 @@
     [self setOptionLoading:NO];
     
     NSLog(@"%@", error);
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Couldn't check-in" message:[NSString stringWithFormat:@"Error appeared: %@", error] preferredStyle:UIAlertControllerStyleAlert];
-    [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Couldn't check-in" message:[NSString stringWithFormat:@"Error appeared 😔. %@", error.localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
