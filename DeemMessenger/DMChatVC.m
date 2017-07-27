@@ -159,7 +159,9 @@
 }
 
 - (IBAction)sendPressed:(id)sender {
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    if (self.dialogHolder.fetchedResultsController.fetchedObjects.count) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
     [self.dialogHolder sendTextMessage:self.textInput.text];
 }
 
